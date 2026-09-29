@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "n_geos": 40,
+  "frac_treated": 0.45,
+  "n_days": 180,
+  "campaign_start_day": 120,
+  "true_lift": 0.12,
+  "n_rows": 7200,
+  "n_treated_geos": 18,
+  "n_control_geos": 22
+}
