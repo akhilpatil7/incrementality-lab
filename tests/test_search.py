@@ -14,6 +14,11 @@ from incrlab.simulate import get_world, realize
 
 
 
+# These tests read the committed-size world from data/*.parquet (``make data``) and check tolerances
+# calibrated on the full geography; the small CI geography is too coarse for the Paid Search design.
+pytestmark = pytest.mark.skipif(get_config().small, reason="full-geography module test (run without INCRLAB_SMALL)")
+
+
 @pytest.fixture(scope="module")
 def o():
     return run(get_settings(get_config()), make_figures=False, write=False, verbose=False)

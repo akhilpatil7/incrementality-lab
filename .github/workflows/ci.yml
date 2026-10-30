@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      INCRLAB_SMALL: "1"
       MPLBACKEND: Agg
-      PYTHONHASHSEED: "0"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,9 +22,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install -e .
-      - name: Tests (small geography)
+      - name: Tests (small CI geography)
         run: INCRLAB_SMALL=1 pytest -q
-      - name: Pipeline smoke (small geography, data + summary)
+      - name: Module tests on the full geography (Social, Paid Search; ~2 min)
         run: |
-          INCRLAB_SMALL=1 python -m incrlab.simulate --small --out "$RUNNER_TEMP/incrlab_data"
-          python -m incrlab.pipeline readme-table > /dev/null
+          python -m incrlab.simulate
+          pytest -q tests/test_meta.py tests/test_search.py tests/test_pipeline.py

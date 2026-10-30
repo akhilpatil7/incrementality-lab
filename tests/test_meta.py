@@ -10,6 +10,11 @@ from incrlab.meta import report
 
 
 
+# These tests read the committed-size world from data/*.parquet (``make data``) and check tolerances
+# calibrated on the full geography; the small CI geography is too coarse for the Social design.
+pytestmark = pytest.mark.skipif(get_config().small, reason="full-geography module test (run without INCRLAB_SMALL)")
+
+
 @pytest.fixture(scope="module")
 def S():
     return MP.run(get_config(), figures=False, write=False)
