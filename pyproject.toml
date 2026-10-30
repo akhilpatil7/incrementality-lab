@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "incrlab"
+version = "2.0.0"
+description = "Incrementality lab v2: geo experiments (Social, Paid Search, Programmatic DSP) feeding an experiment-calibrated MMM, on synthetic data with known ground truth."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Akhil Patil", email = "akhil.patil7@gmail.com"}]
+requires-python = ">=3.11"
+dependencies = [
+  "numpy", "pandas", "scipy", "statsmodels", "scikit-learn", "matplotlib",
+  "seaborn", "networkx", "pyarrow",
+]
+
+[project.optional-dependencies]
+bayes = ["pymc", "arviz"]
+synth = ["pysyncon"]
+dev = ["pytest", "jupyter", "nbconvert", "ipykernel"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning", "ignore::FutureWarning"]

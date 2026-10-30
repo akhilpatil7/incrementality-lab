@@ -1,5 +1,11 @@
 # incrementality-lab
 
+> **v2 in progress (branch `v2`).** The v1 code, notebooks and figures below now live in [`legacy/`](legacy/).
+> v2 is an end-to-end measurement program on one synthetic world with known ground truth:
+> Social geo holdout -> Paid Search two-arm dark-out -> Programmatic DSP geo tests -> experiment-calibrated MMM.
+> Foundation: `src/incrlab/` (`config`, `geo`, `simulate`, `common/`); contract for module builders in [`docs/API.md`](docs/API.md).
+> Quick start: `make venv && make data && make test`.
+
 **Runnable proof of marketing-measurement & incrementality methods — on synthetic data with a _known_ ground-truth lift, so you can watch each method recover it.**
 
 This repo generates a realistic multi-geo (DMA-level, daily) marketing panel with a deliberately injected incremental lift of **+12%**, then applies five causal / experimentation techniques and shows that the correct methods recover the true effect while a naive pre/post comparison does not. Everything is reproducible from a fixed seed and runs end-to-end in a clean virtualenv.
@@ -26,24 +32,24 @@ All numbers above are produced by the code in this repo and re-emitted to `repor
 
 Difference-in-Differences — parallel pre-trends, post-launch divergence:
 
-![DiD trends](reports/figures/01_did_trends.png)
-![DiD estimates](reports/figures/02_did_estimates.png)
+![DiD trends](legacy/reports/figures/01_did_trends.png)
+![DiD estimates](legacy/reports/figures/02_did_estimates.png)
 
 Synthetic control — virtual control matches pre-period, gap = lift:
 
-![Synthetic control](reports/figures/03_synthetic_control.png)
+![Synthetic control](legacy/reports/figures/03_synthetic_control.png)
 
 CUPED — pre-period covariate slashes the standard error:
 
-![CUPED](reports/figures/04_cuped.png)
+![CUPED](legacy/reports/figures/04_cuped.png)
 
 MMM — adstock + saturation response curve:
 
-![MMM response](reports/figures/05_mmm_response.png)
+![MMM response](legacy/reports/figures/05_mmm_response.png)
 
 Power / MDE — sizing the experiment:
 
-![Power and MDE](reports/figures/06_power_mde.png)
+![Power and MDE](legacy/reports/figures/06_power_mde.png)
 
 ---
 
