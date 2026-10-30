@@ -209,16 +209,19 @@ TESTS: Dict[str, TestDesign] = {
     # Year 3 Q1: flagship DSP tests.
     "dsp_a": TestDesign(
         "dsp_a", {"holdout": ("dsp_a",)}, "NV", "zip",
-        design_start=95, design_end=111, readout_pre_start=102, test_start=112, test_end=117,
+        design_start=95, design_end=111, readout_pre_start=96, test_start=112, test_end=123,
         leakage=0.03,
         spillover={"enabled": True, "radius_mi": 30.0, "decay_mi": 10.0, "strength": 0.30},
-        notes="Contiguous zip patch (~0.45M pop) vs Mahalanobis-matched twin patch; 6 test weeks."),
+        notes=("Contiguous zip patch vs Mahalanobis-matched twin patch; 12 test weeks, 16 readout-pre weeks. "
+               "v2 design change: the original 6-week / 0.5M-pop plan had a ~29% sales MDE (pre-period power "
+               "analysis), so the window was lengthened and the holdout is sized by the module's power ladder.")),
     "dsp_b": TestDesign(
         "dsp_b", {"holdout": ("dsp_b",)}, "EM", "zip",
-        design_start=90, design_end=111, readout_pre_start=101, test_start=112, test_end=119,
+        design_start=90, design_end=111, readout_pre_start=101, test_start=112, test_end=123,
         leakage=0.03,
         spillover={"enabled": True, "radius_mi": 30.0, "decay_mi": 10.0, "strength": 0.30},
-        notes="K-means zip cluster treated vs synthetic control of other clusters; 8 test weeks."),
+        notes=("K-means zip cluster treated vs synthetic control of other clusters; 12 test weeks "
+               "(lengthened from 8 for sales-stage power, same calendar as Vendor A).")),
 }
 
 DSP_B_VENDOR_SWITCH_WEEK = 96  # legacy vendor -> Vendor B (attribution level shift)

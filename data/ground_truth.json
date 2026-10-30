@@ -647,12 +647,12 @@
         111
       ],
       "readout_pre_window": [
-        102,
+        96,
         111
       ],
       "test_window": [
         112,
-        117
+        123
       ],
       "leakage": 0.03,
       "arms": {
@@ -666,13 +666,13 @@
         "decay_mi": 10.0,
         "strength": 0.3
       },
-      "notes": "Contiguous zip patch (~0.45M pop) vs Mahalanobis-matched twin patch; 6 test weeks.",
+      "notes": "Contiguous zip patch vs Mahalanobis-matched twin patch; 12 test weeks, 16 readout-pre weeks. v2 design change: the original 6-week / 0.5M-pop plan had a ~29% sales MDE (pre-period power analysis), so the window was lengthened and the holdout is sized by the module's power ladder.",
       "region_wide_holdout_lift": {
         "holdout": {
-          "qs": 0.06500135,
-          "rated": 0.08823952,
-          "sales": 0.15399194,
-          "cost_per_incremental_sales": 413.26757354
+          "qs": 0.07787628,
+          "rated": 0.10550146,
+          "sales": 0.18297808,
+          "cost_per_incremental_sales": 367.22869765
         }
       }
     },
@@ -689,7 +689,7 @@
       ],
       "test_window": [
         112,
-        119
+        123
       ],
       "leakage": 0.03,
       "arms": {
@@ -703,13 +703,13 @@
         "decay_mi": 10.0,
         "strength": 0.3
       },
-      "notes": "K-means zip cluster treated vs synthetic control of other clusters; 8 test weeks.",
+      "notes": "K-means zip cluster treated vs synthetic control of other clusters; 12 test weeks (lengthened from 8 for sales-stage power, same calendar as Vendor A).",
       "region_wide_holdout_lift": {
         "holdout": {
-          "qs": 0.05689541,
-          "rated": 0.03835744,
-          "sales": 0.00284979,
-          "cost_per_incremental_sales": 19655.12490623
+          "qs": 0.06066953,
+          "rated": 0.04092279,
+          "sales": 0.00304447,
+          "cost_per_incremental_sales": 18442.38513792
         }
       }
     }

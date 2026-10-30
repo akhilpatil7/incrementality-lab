@@ -1,9 +1,11 @@
-# incrementality-lab v2
-VENV ?= $(HOME)/.hermes/venvs/incrlab
+# incrlab v2 - `make all` = data -> meta -> search -> dsp -> mmm -> summary.json (+ README numbers) -> notebooks
+# Override the interpreter with `make all VENV=/path/to/venv` or `make all PY=python`.
+VENV ?= .venv
 PY   ?= $(VENV)/bin/python
-NB   := $(wildcard notebooks/*.ipynb)
+NB   := notebooks/00_overview.ipynb notebooks/01_meta.ipynb notebooks/02_search.ipynb \
+        notebooks/03_dsp.ipynb notebooks/04_mmm_calibration.ipynb
 
-.PHONY: venv data meta search dsp mmm all test notebooks clean small
+.PHONY: venv data meta search dsp mmm pipeline summary all test test-small notebooks clean small
 
 venv:
 	@command -v uv >/dev/null || { echo "uv is required (https://docs.astral.sh/uv/)"; exit 1; }
@@ -28,15 +30,26 @@ dsp: data
 
 mmm: meta search dsp
 	$(PY) -m incrlab.mmm
+	$(PY) -m incrlab.pipeline summary
 
-all: data meta search dsp mmm notebooks
+# whole program, each stage once; writes reports/results/summary.json and refreshes the README scoreboard
+pipeline:
+	$(PY) -m incrlab.pipeline all
+
+summary:
+	$(PY) -m incrlab.pipeline summary
+
+all: pipeline notebooks
 
 test:
 	$(PY) -m pytest
 
+test-small:
+	INCRLAB_SMALL=1 $(PY) -m pytest -q
+
 notebooks:
-	@if [ -n "$(NB)" ]; then $(PY) -m jupyter nbconvert --to notebook --execute --inplace \
-	  --ExecutePreprocessor.timeout=1800 $(NB); else echo "no notebooks yet"; fi
+	$(PY) -m jupyter nbconvert --to notebook --execute --inplace \
+	  --ExecutePreprocessor.timeout=1800 $(NB)
 
 clean:
 	rm -f data/*.parquet

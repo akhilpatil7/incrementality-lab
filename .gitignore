@@ -20,3 +20,6 @@ data/scenarios/
 # OS
 .DS_Store
 Thumbs.db
+
+# Fallback MMM calibration stub (rebuilt on demand; real inputs come from reports/results)
+data/calibration_inputs.json

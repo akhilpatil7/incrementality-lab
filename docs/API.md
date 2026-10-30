@@ -4,13 +4,24 @@ This is the contract between the Phase-A foundation (`config`, `geo`, `simulate`
 module builders (`meta/`, `search/`, `dsp/`, `mmm/`). Build against these names; if you need a change,
 add to the foundation rather than forking it.
 
-- Python ≥ 3.11 (venv: `~/.hermes/venvs/incrlab`, Python 3.12). Install: `make venv`.
+- Python ≥ 3.11 (tested on 3.12). Install: `make venv` (creates `.venv`).
 - `make data` → `python -m incrlab.simulate` writes `data/*.parquet` + `data/ground_truth.json` (~5 s).
 - `INCRLAB_SMALL=1` → small geography (12 + 8 counties, 300 zips) for CI; same timeline & test windows.
 - `INCRLAB_SEED`, `INCRLAB_EFFECT_MULT` (scales every channel's true max effect; use it for a "clearly
   significant" demo), `INCRLAB_DATA_DIR` env overrides.
 - Each module must expose `python -m incrlab.<module>` (a `__main__.py`) — the Makefile targets
   `meta | search | dsp | mmm` call exactly that — and write `reports/results/<module>.json`.
+
+## 0. Modules (all implemented)
+
+| Module | Entry point | Writes | Notebook | Method notes |
+|---|---|---|---|---|
+| `incrlab.simulate` | `python -m incrlab.simulate` | `data/*.parquet`, `data/ground_truth.json` | – | this file |
+| `incrlab.meta` | `python -m incrlab.meta` | `reports/results/meta.json`, `reports/readouts/meta.md`, `reports/figures/meta/` | `01_meta.ipynb` | [methodology](methodology.md#1-social-geo-holdout) |
+| `incrlab.search` | `python -m incrlab.search` | `search.json`, `search.md`, `figures/search/` | `02_search.ipynb` | [methodology](methodology.md#2-paid-search-two-arm-dark-out) |
+| `incrlab.dsp` | `python -m incrlab.dsp` | `dsp.json`, `dsp.md`, `figures/dsp/` | `03_dsp.ipynb` | [dsp_pipeline.md](dsp_pipeline.md) |
+| `incrlab.mmm` | `python -m incrlab.mmm` | `mmm.json`, `mmm.md`, `figures/mmm/` | `04_mmm_calibration.ipynb` | [methodology](methodology.md#4-experiment-calibrated-mmm) |
+| `incrlab.pipeline` | `python -m incrlab.pipeline all` | all of the above + `reports/results/summary.json`; refreshes the README scoreboard | `00_overview.ipynb` | – |
 
 ## 1. Conventions
 
@@ -41,8 +52,8 @@ Organic / direct / unattributed / other are non-paid last-touch sources only.
 |---|---|---|---|---|---|---|
 | `meta` | EM / county (or county bundle) | `holdout` → social | 0–57 (train 0–50, pseudo-post 51–57) | 51–57 | 58–65 (8 wk) | Incomplete holdout: `leakage=0.25` (25% of spend keeps serving) |
 | `search` | NV / county | `all_search` → brand+nonbrand; `branded_only` → brand | 60–78 | 69–78 | 79–84 (6 wk) | Also choose a control county + BAU donors |
-| `dsp_a` | NV / zip patch | `holdout` → dsp_a | 95–111 | 102–111 | 112–117 (6 wk) | `leakage=0.03`; spillover on (30 mi radius, 10 mi decay, 0.30 strength) |
-| `dsp_b` | EM / zip cluster | `holdout` → dsp_b | 90–111 | 101–111 | 112–119 (8 wk) | Vendor switch at week 96 (`DSP_B_VENDOR_SWITCH_WEEK`): vendor-reported conversions ×0.8, *true* effect unchanged; reporting-dip weeks 100–101 |
+| `dsp_a` | NV / zip patch | `holdout` → dsp_a | 95–111 | 96–111 | 112–123 (12 wk) | `leakage=0.03`; spillover on (30 mi radius, 10 mi decay, 0.30 strength) |
+| `dsp_b` | EM / zip cluster | `holdout` → dsp_b | 90–111 | 101–111 | 112–123 (12 wk) | Vendor switch at week 96 (`DSP_B_VENDOR_SWITCH_WEEK`): vendor-reported conversions ×0.8, *true* effect unchanged; reporting-dip weeks 100–101 |
 
 Other constants: `BUFFER_MILES_DEFAULT=30`, `ADJACENCY_MILES_DEFAULT=10`, `DSP_REPORT_LAG=(0.5,0.2,0.05)`
 (use `simulate.apply_report_lag(panel, as_of_week)` to mimic vendor attribution lag in design-time data).
@@ -94,7 +105,7 @@ lat, lon (pop-weighted centroid):float64, n_zips:int64, density:float64`.
 dsp_b_vendor_live:int8, arm_meta, arm_search, arm_dsp_a, arm_dsp_b:str ("" in BAU; arm name in scenario
 output), spend_dsp_{a,b}_month, impressions_dsp_{a,b}_month, clicks_dsp_{a,b}_month,
 vendor_conv_qs_dsp_{a,b}_month` (monthly totals repeated weekly — dedupe!).
-DSP share metric for Vendor B design: `shareof_dsp_quotes = vendor_conv_qs_dsp_b / qs` (compute on sums).
+DSP share metric for Vendor B design: `vendor share = vendor_conv_qs_dsp_b / qs` (compute on sums).
 
 ## 4. Scenario runner (apply YOUR selected geos)
 
