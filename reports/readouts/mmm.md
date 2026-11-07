@@ -105,4 +105,4 @@ Last-touch is wrong in both directions (it credits DSP Vendor B and branded sear
 - Synthetic world with a known data-generating process close to the model's functional form; real MMMs face model misspecification that these numbers do not capture.
 - National weekly data: ~150 points for ~35 parameters. Priors matter; they are identical across channels and documented in `extra.settings.priors`.
 - Test geos are a small, local slice; the 10% transport error term and the window-level likelihood are deliberate hedges, not exact physics.
-- Runtime 128s.
+- Runtime 113s.

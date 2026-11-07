@@ -1,7 +1,7 @@
 {
   "module": "meta",
   "schema_version": "1.0",
-  "generated_at": "2026-10-30T19:09:53",
+  "generated_at": "2026-11-07T11:02:44",
   "seed": 20260,
   "small": false,
   "headline": {
@@ -994,7 +994,7 @@
         },
         {
           "k": 7,
-          "inertia": 1.6607535299459868,
+          "inertia": 1.6607535299459866,
           "silhouette": 0.23806120649916124
         }
       ]

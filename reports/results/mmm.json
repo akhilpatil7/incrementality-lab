@@ -1,7 +1,7 @@
 {
   "module": "mmm",
   "schema_version": "1.0",
-  "generated_at": "2026-10-30T19:13:59",
+  "generated_at": "2026-11-07T11:06:01",
   "seed": 20260,
   "small": false,
   "headline": {
@@ -46,7 +46,7 @@
     },
     "stub_tests": [],
     "calibration_uses_stub": false,
-    "runtime_seconds": 128.12012839317322,
+    "runtime_seconds": 112.56521368026733,
     "roi_mae_calibrated_powered_sensitivity": 0.3624879459842108,
     "optimizer_true_gain_sales": 4717.513168593738,
     "optimizer_true_gain_pct": 0.06851464885521281,
@@ -65,7 +65,7 @@
       "holdout_r2": 0.8244101928374241,
       "holdout_ppc_coverage90": 1.0,
       "holdout_weeks": 13,
-      "fit_seconds": 31.615079641342163
+      "fit_seconds": 27.14017152786255
     },
     "diag_calibrated": {
       "max_r_hat": 1.010080252009559,
@@ -82,7 +82,7 @@
       "holdout_r2": 0.8323031055810418,
       "holdout_ppc_coverage90": 1.0,
       "holdout_weeks": 13,
-      "fit_seconds": 31.1723370552063
+      "fit_seconds": 26.30012011528015
     },
     "diag_calibrated_powered": {
       "max_r_hat": 1.0078719101657654,
@@ -99,7 +99,7 @@
       "holdout_r2": 0.7837893654585444,
       "holdout_ppc_coverage90": 0.9230769230769231,
       "holdout_weeks": 13,
-      "fit_seconds": 22.823386192321777
+      "fit_seconds": 19.300889492034912
     }
   },
   "estimates": [
