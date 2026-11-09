@@ -23,13 +23,14 @@ from typing import Dict, List, Optional
 
 from .config import RESULTS_DIR, get_config
 
-STAGES = ("data", "meta", "search", "dsp", "mmm")
+STAGES = ("data", "meta", "search", "dsp", "mmm", "geoselect")
 _CMDS = {
     "data": [sys.executable, "-m", "incrlab.simulate"],
     "meta": [sys.executable, "-m", "incrlab.meta"],
     "search": [sys.executable, "-m", "incrlab.search"],
     "dsp": [sys.executable, "-m", "incrlab.dsp"],
     "mmm": [sys.executable, "-m", "incrlab.mmm"],
+    "geoselect": [sys.executable, "-m", "incrlab.geoselect"],
 }
 
 

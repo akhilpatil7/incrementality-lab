@@ -23,3 +23,12 @@ Thumbs.db
 
 # Fallback MMM calibration stub (rebuilt on demand; real inputs come from reports/results)
 data/calibration_inputs.json
+
+# geoselect: bulk ACS/Gazetteer downloads (~380MB, regenerate with `python -m incrlab.geoselect`);
+# the compact cached extract (real demographics for the selected MA geos) IS committed.
+data/census_raw/*.dat
+data/census_raw/Geos*5YR.txt
+data/census_raw/2023_Gaz_cousubs_national.txt
+data/census_raw/gaz_place/
+data/census_raw/gaz_county/
+!data/census_raw/ma_towns_acs2022_cache.json

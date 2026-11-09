@@ -28,6 +28,9 @@ search: data
 dsp: data
 	$(PY) -m incrlab.dsp
 
+geoselect:
+	$(PY) -m incrlab.geoselect
+
 mmm: meta search dsp
 	$(PY) -m incrlab.mmm
 	$(PY) -m incrlab.pipeline summary

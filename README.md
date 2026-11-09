@@ -85,7 +85,7 @@ so the outcome reflects the design. Nothing is hand-picked and nothing is force-
 
 ---
 
-## The four modules
+## The five modules
 
 ### 1 · Social geo holdout - the first, rough-but-correct test
 
@@ -130,6 +130,25 @@ curves, contribution waterfall, triangulation and an EVPPI-based next-test recom
 ![Triangulation](reports/figures/mmm/11_triangulation.png)
 ![Optimizer](reports/figures/mmm/12_optimizer_mix.png)
 
+### 5 · Geo-experiment selection - real Census data, end to end
+
+Runs the full lifecycle of picking and sizing a geo experiment on **real geography**: US Census ACS 2018-2022 5-year
+demographics (population, income, age, race/ethnicity, education, density) for 39 Massachusetts towns/cities with
+population >= 40k, K-means clustered, with a treatment/control pair matched by standardized distance within a cluster.
+A closed-form DiD power analysis sizes the test; a **simulated** daily test window (clearly documented, since there is
+no real marketing-outcome panel for arbitrary MA towns) injects a known true lift, takes weekly sequential-monitoring
+DiD looks, and reads out the final estimate against the known ground truth. Also shipped as a fully self-contained
+script (`standalone/geoselect_standalone.py`, no `incrlab` import) so the same pipeline runs standalone on another
+project. Census access note: `api.census.gov`'s tabular Data API now requires a registered key for data queries
+(302 -> `missing_key.html` without one); both the module and the standalone script instead pull the identical ACS
+5-year estimates from the Census Bureau's public, key-free bulk ACS Summary File + Gazetteer distribution.
+
+![Market clusters](reports/figures/geoselect/01_clusters.png)
+![Power-sizing ladder](reports/figures/geoselect/02_power_ladder.png)
+![Monitoring](reports/figures/geoselect/03_monitoring.png)
+
+Exec readout: [`reports/readouts/geoselect.md`](reports/readouts/geoselect.md)
+
 ---
 
 ## The MMM gap (and why calibration did not win here)
@@ -170,13 +189,14 @@ src/incrlab/
   geo.py           synthetic geography: counties, zips, adjacency, haversine
   simulate.py      world generator + scenario runner (applies holdouts to selected geos)
   common/          synthetic control, DiD (FE + clustered SE), BSTS, power/MDE, placebo inference, plotting
-  meta/ search/ dsp/ mmm/   the four modules (python -m incrlab.<module>)
+  meta/ search/ dsp/ mmm/ geoselect/   the five modules (python -m incrlab.<module>)
   pipeline.py      python -m incrlab.pipeline all  -> reports/results/summary.json
 notebooks/         00_overview + one executed deep-dive per module
 reports/           figures/<module>/*.png, results/*.json, readouts/*.md (exec-style)
 docs/              methodology.md, dsp_pipeline.md, API.md
 tests/             generator determinism, estimator recovery of injected lifts, design rules, optimizer, README==JSON
 legacy/            v1 (single-panel DiD / SC / CUPED / MMM / power demo), kept for history
+standalone/        geoselect_standalone.py - self-contained real-Census geo-experiment tool (no incrlab import)
 ```
 
 ## Methods -> skills
