@@ -1,0 +1,661 @@
+{
+  "module": "geoselect",
+  "schema_version": "1.0",
+  "generated_at": "2026-11-09T08:56:09",
+  "seed": 20260,
+  "small": false,
+  "headline": {
+    "treatment_town": "Waltham",
+    "treatment_pop": 64711.0,
+    "treatment_geoid": "2501772600",
+    "control_town": "Medford",
+    "control_pop": 61748.0,
+    "control_geoid": "2501739835",
+    "cluster": 1,
+    "cluster_size": 7,
+    "standardized_distance": 0.7741478442459166,
+    "n_geos_considered": 39,
+    "n_clusters": 5,
+    "sigma_gap": 0.13013027479712402,
+    "rho": -0.03017602050438214,
+    "design_mde_at_test_weeks": 0.12715858553752668,
+    "test_weeks": 8,
+    "weeks_to_80pct_power_at_true_lift": 10,
+    "true_lift": 0.12,
+    "measured_lift": 0.04579303116963685,
+    "ci_low": 0.04035708873111257,
+    "ci_high": 0.04932109988098006,
+    "ci_covers_truth": false,
+    "verdict": "detected_but_underpowered_design"
+  },
+  "estimates": [
+    {
+      "test": "geoselect",
+      "arm": "treatment_vs_matched_control",
+      "metric": "conversions",
+      "method": "change_ratio_did",
+      "estimate": 0.04579303116963685,
+      "ci_low": 0.04035708873111257,
+      "ci_high": 0.04932109988098006,
+      "ci_level": 0.9,
+      "p_value": null,
+      "significant": true,
+      "incremental": 127.15992414664925,
+      "truth": 0.12,
+      "notes": "weekly change-ratio DiD, full test window, week bootstrap CI"
+    }
+  ],
+  "design": {
+    "treatment": {
+      "town": "Waltham",
+      "geoid": "2501772600",
+      "pop": 64711.0,
+      "cluster": 1
+    },
+    "control": {
+      "town": "Medford",
+      "geoid": "2501739835",
+      "pop": 61748.0,
+      "cluster": 1
+    },
+    "cluster": 1,
+    "feature_comparison": {
+      "median_income": {
+        "treatment": 113443.0,
+        "control": 114863.0
+      },
+      "median_age": {
+        "treatment": 34.7,
+        "control": 35.4
+      },
+      "pct_bachelors_plus": {
+        "treatment": 0.5657267986545365,
+        "control": 0.5596425190957318
+      },
+      "pct_white": {
+        "treatment": 0.6178856763146915,
+        "control": 0.6758599468808706
+      },
+      "pct_hispanic": {
+        "treatment": 0.15304971334085396,
+        "control": 0.08361404417956857
+      },
+      "log_density": {
+        "treatment": 8.532547443665875,
+        "control": 8.939199747691763
+      },
+      "log_pop": {
+        "treatment": 11.077686481493952,
+        "control": 11.030816865301732
+      },
+      "baseline_kpi_rate": {
+        "treatment": 4.850339175602161,
+        "control": 5.106871113282109
+      }
+    },
+    "features_used": [
+      "median_income",
+      "median_age",
+      "pct_bachelors_plus",
+      "pct_white",
+      "pct_hispanic",
+      "log_density",
+      "log_pop",
+      "baseline_kpi_rate"
+    ],
+    "kmeans_k": 5,
+    "cluster_summary": [
+      {
+        "cluster": 0,
+        "n": 5,
+        "median_income_mean": 65692.8,
+        "median_age_mean": 35.339999999999996,
+        "pct_bachelors_plus_mean": 0.21015990884640273,
+        "pct_white_mean": 0.3268568971409963,
+        "pct_hispanic_mean": 0.48442535504255685,
+        "log_density_mean": 9.184437109717283,
+        "log_pop_mean": 11.332646084826376,
+        "baseline_kpi_rate_mean": 6.328262596745194
+      },
+      {
+        "cluster": 1,
+        "n": 7,
+        "median_income_mean": 130558.28571428571,
+        "median_age_mean": 35.75714285714286,
+        "pct_bachelors_plus_mean": 0.7123746542877719,
+        "pct_white_mean": 0.6683670307396369,
+        "pct_hispanic_mean": 0.08375390074938127,
+        "log_density_mean": 9.130635325772138,
+        "log_pop_mean": 11.178978410574093,
+        "baseline_kpi_rate_mean": 4.659208100746895
+      },
+      {
+        "cluster": 2,
+        "n": 3,
+        "median_income_mean": 112086.33333333333,
+        "median_age_mean": 45.96666666666667,
+        "pct_bachelors_plus_mean": 0.41682820697184075,
+        "pct_white_mean": 0.8139182338597682,
+        "pct_hispanic_mean": 0.05138914369294661,
+        "log_density_mean": 6.853929895423318,
+        "log_pop_mean": 10.82176743321699,
+        "baseline_kpi_rate_mean": 2.959249324642048
+      },
+      {
+        "cluster": 3,
+        "n": 17,
+        "median_income_mean": 82517.17647058824,
+        "median_age_mean": 40.46470588235294,
+        "pct_bachelors_plus_mean": 0.34898908640520226,
+        "pct_white_mean": 0.7131009464816014,
+        "pct_hispanic_mean": 0.14775233232835222,
+        "log_density_mean": 7.679659575121411,
+        "log_pop_mean": 10.845292701656044,
+        "baseline_kpi_rate_mean": 5.053919678620591
+      },
+      {
+        "cluster": 4,
+        "n": 7,
+        "median_income_mean": 76402.0,
+        "median_age_mean": 35.528571428571425,
+        "pct_bachelors_plus_mean": 0.3461338996145956,
+        "pct_white_mean": 0.4714950371488836,
+        "pct_hispanic_mean": 0.16018132415117886,
+        "log_density_mean": 8.912044207395496,
+        "log_pop_mean": 11.853740602555476,
+        "baseline_kpi_rate_mean": 6.41177102401673
+      }
+    ]
+  },
+  "validation": {
+    "power": {
+      "sigma_gap": 0.13013027479712402,
+      "rho": -0.03017602050438214,
+      "alpha_one_sided": 0.1,
+      "target_power": 0.8,
+      "mde_at_test_weeks": 0.12715858553752668,
+      "test_weeks": 8,
+      "power_curve": [
+        {
+          "lift": 0.03,
+          "weeks": 2,
+          "power": 0.1648279433309192
+        },
+        {
+          "lift": 0.03,
+          "weeks": 4,
+          "power": 0.18944889644031948
+        },
+        {
+          "lift": 0.03,
+          "weeks": 6,
+          "power": 0.2056992464449881
+        },
+        {
+          "lift": 0.03,
+          "weeks": 8,
+          "power": 0.21750707807461112
+        },
+        {
+          "lift": 0.03,
+          "weeks": 10,
+          "power": 0.22655062886721905
+        },
+        {
+          "lift": 0.03,
+          "weeks": 12,
+          "power": 0.23372626270262714
+        },
+        {
+          "lift": 0.03,
+          "weeks": 16,
+          "power": 0.24442761774835048
+        },
+        {
+          "lift": 0.03,
+          "weeks": 20,
+          "power": 0.2520467186228253
+        },
+        {
+          "lift": 0.03,
+          "weeks": 26,
+          "power": 0.26010805091817313
+        },
+        {
+          "lift": 0.05,
+          "weeks": 2,
+          "power": 0.22055771113916656
+        },
+        {
+          "lift": 0.05,
+          "weeks": 4,
+          "power": 0.27020914994990286
+        },
+        {
+          "lift": 0.05,
+          "weeks": 6,
+          "power": 0.30338457125313956
+        },
+        {
+          "lift": 0.05,
+          "weeks": 8,
+          "power": 0.32754611279123835
+        },
+        {
+          "lift": 0.05,
+          "weeks": 10,
+          "power": 0.3460315035324423
+        },
+        {
+          "lift": 0.05,
+          "weeks": 12,
+          "power": 0.3606647106029848
+        },
+        {
+          "lift": 0.05,
+          "weeks": 16,
+          "power": 0.38240001722839245
+        },
+        {
+          "lift": 0.05,
+          "weeks": 20,
+          "power": 0.3977904343078929
+        },
+        {
+          "lift": 0.05,
+          "weeks": 26,
+          "power": 0.41397968079654257
+        },
+        {
+          "lift": 0.08,
+          "weeks": 2,
+          "power": 0.32147911234993903
+        },
+        {
+          "lift": 0.08,
+          "weeks": 4,
+          "power": 0.41661610925185066
+        },
+        {
+          "lift": 0.08,
+          "weeks": 6,
+          "power": 0.4782388264633965
+        },
+        {
+          "lift": 0.08,
+          "weeks": 8,
+          "power": 0.5216169273350748
+        },
+        {
+          "lift": 0.08,
+          "weeks": 10,
+          "power": 0.5537888599264458
+        },
+        {
+          "lift": 0.08,
+          "weeks": 12,
+          "power": 0.5785708660954237
+        },
+        {
+          "lift": 0.08,
+          "weeks": 16,
+          "power": 0.6141826608701371
+        },
+        {
+          "lift": 0.08,
+          "weeks": 20,
+          "power": 0.6384872467081042
+        },
+        {
+          "lift": 0.08,
+          "weeks": 26,
+          "power": 0.6632026843237097
+        },
+        {
+          "lift": 0.1,
+          "weeks": 2,
+          "power": 0.3977904343078929
+        },
+        {
+          "lift": 0.1,
+          "weeks": 4,
+          "power": 0.5228032529547867
+        },
+        {
+          "lift": 0.1,
+          "weeks": 6,
+          "power": 0.5995451972987832
+        },
+        {
+          "lift": 0.1,
+          "weeks": 8,
+          "power": 0.6510486203345232
+        },
+        {
+          "lift": 0.1,
+          "weeks": 10,
+          "power": 0.6877340538192511
+        },
+        {
+          "lift": 0.1,
+          "weeks": 12,
+          "power": 0.7150457749814639
+        },
+        {
+          "lift": 0.1,
+          "weeks": 16,
+          "power": 0.7527548848055231
+        },
+        {
+          "lift": 0.1,
+          "weeks": 20,
+          "power": 0.7773907274473666
+        },
+        {
+          "lift": 0.1,
+          "weeks": 26,
+          "power": 0.801478071097404
+        },
+        {
+          "lift": 0.12,
+          "weeks": 2,
+          "power": 0.4782388264633964
+        },
+        {
+          "lift": 0.12,
+          "weeks": 4,
+          "power": 0.6273863198336104
+        },
+        {
+          "lift": 0.12,
+          "weeks": 6,
+          "power": 0.7118899315072712
+        },
+        {
+          "lift": 0.12,
+          "weeks": 8,
+          "power": 0.7648816562416814
+        },
+        {
+          "lift": 0.12,
+          "weeks": 10,
+          "power": 0.8005634350531148
+        },
+        {
+          "lift": 0.12,
+          "weeks": 12,
+          "power": 0.825912202380628
+        },
+        {
+          "lift": 0.12,
+          "weeks": 16,
+          "power": 0.859065837820598
+        },
+        {
+          "lift": 0.12,
+          "weeks": 20,
+          "power": 0.8794823649509536
+        },
+        {
+          "lift": 0.12,
+          "weeks": 26,
+          "power": 0.8984209479189703
+        },
+        {
+          "lift": 0.15,
+          "weeks": 2,
+          "power": 0.5995451972987831
+        },
+        {
+          "lift": 0.15,
+          "weeks": 4,
+          "power": 0.7662526719948775
+        },
+        {
+          "lift": 0.15,
+          "weeks": 6,
+          "power": 0.8459058513016859
+        },
+        {
+          "lift": 0.15,
+          "weeks": 8,
+          "power": 0.8893361697531529
+        },
+        {
+          "lift": 0.15,
+          "weeks": 10,
+          "power": 0.9154237743306121
+        },
+        {
+          "lift": 0.15,
+          "weeks": 12,
+          "power": 0.9322886418483176
+        },
+        {
+          "lift": 0.15,
+          "weeks": 16,
+          "power": 0.952098722289152
+        },
+        {
+          "lift": 0.15,
+          "weeks": 20,
+          "power": 0.9629416041270213
+        },
+        {
+          "lift": 0.15,
+          "weeks": 26,
+          "power": 0.9720070015528767
+        },
+        {
+          "lift": 0.2,
+          "weeks": 2,
+          "power": 0.7773907274473666
+        },
+        {
+          "lift": 0.2,
+          "weeks": 4,
+          "power": 0.9186325802343025
+        },
+        {
+          "lift": 0.2,
+          "weeks": 6,
+          "power": 0.9629416041270213
+        },
+        {
+          "lift": 0.2,
+          "weeks": 8,
+          "power": 0.9801981027622617
+        },
+        {
+          "lift": 0.2,
+          "weeks": 10,
+          "power": 0.9881026141355195
+        },
+        {
+          "lift": 0.2,
+          "weeks": 12,
+          "power": 0.992195336686137
+        },
+        {
+          "lift": 0.2,
+          "weeks": 16,
+          "power": 0.9959505737091604
+        },
+        {
+          "lift": 0.2,
+          "weeks": 20,
+          "power": 0.9975103726994619
+        },
+        {
+          "lift": 0.2,
+          "weeks": 26,
+          "power": 0.9985368551823203
+        },
+        {
+          "lift": 0.25,
+          "weeks": 2,
+          "power": 0.8987836319052823
+        },
+        {
+          "lift": 0.25,
+          "weeks": 4,
+          "power": 0.9805528511534375
+        },
+        {
+          "lift": 0.25,
+          "weeks": 6,
+          "power": 0.994656230084561
+        },
+        {
+          "lift": 0.25,
+          "weeks": 8,
+          "power": 0.9980903313478395
+        },
+        {
+          "lift": 0.25,
+          "weeks": 10,
+          "power": 0.9991721776804401
+        },
+        {
+          "lift": 0.25,
+          "weeks": 12,
+          "power": 0.999585301552888
+        },
+        {
+          "lift": 0.25,
+          "weeks": 16,
+          "power": 0.9998584478279995
+        },
+        {
+          "lift": 0.25,
+          "weeks": 20,
+          "power": 0.9999361503444079
+        },
+        {
+          "lift": 0.25,
+          "weeks": 26,
+          "power": 0.9999732297820656
+        }
+      ],
+      "weeks_to_80pct_power_at_true_lift": 10
+    },
+    "monitoring_interim_looks": [
+      {
+        "look": 1,
+        "weeks_elapsed": 1,
+        "n_days_elapsed": 7,
+        "lift": -0.055077019805092914,
+        "ci_low": -0.05728725990053041,
+        "ci_high": -0.05241891873138645,
+        "ci_width": 0.004868341169143954
+      },
+      {
+        "look": 2,
+        "weeks_elapsed": 2,
+        "n_days_elapsed": 14,
+        "lift": -0.023378436383741298,
+        "ci_low": -0.028004659706569717,
+        "ci_high": -0.020462955159847404,
+        "ci_width": 0.007541704546722313
+      },
+      {
+        "look": 3,
+        "weeks_elapsed": 3,
+        "n_days_elapsed": 21,
+        "lift": 0.02140923790723054,
+        "ci_low": 0.014413718310054445,
+        "ci_high": 0.02695898919815327,
+        "ci_width": 0.012545270888098826
+      },
+      {
+        "look": 4,
+        "weeks_elapsed": 4,
+        "n_days_elapsed": 28,
+        "lift": 0.0029792478615838676,
+        "ci_low": -0.0052076999551540154,
+        "ci_high": 0.0047859387455227035,
+        "ci_width": 0.009993638700676719
+      },
+      {
+        "look": 5,
+        "weeks_elapsed": 5,
+        "n_days_elapsed": 35,
+        "lift": 0.020409226386965997,
+        "ci_low": 0.013370641393831142,
+        "ci_high": 0.024233913890947097,
+        "ci_width": 0.010863272497115955
+      },
+      {
+        "look": 6,
+        "weeks_elapsed": 6,
+        "n_days_elapsed": 42,
+        "lift": 0.051242364585335994,
+        "ci_low": 0.04460131995332035,
+        "ci_high": 0.05599530256122344,
+        "ci_width": 0.011393982607903093
+      },
+      {
+        "look": 7,
+        "weeks_elapsed": 7,
+        "n_days_elapsed": 49,
+        "lift": 0.04451320063755729,
+        "ci_low": 0.03841494181854018,
+        "ci_high": 0.04843063785193577,
+        "ci_width": 0.01001569603339559
+      },
+      {
+        "look": 8,
+        "weeks_elapsed": 8,
+        "n_days_elapsed": 56,
+        "lift": 0.04579303116963685,
+        "ci_low": 0.04035708873111257,
+        "ci_high": 0.04932109988098006,
+        "ci_width": 0.008964011149867487
+      }
+    ]
+  },
+  "truth": {
+    "true_lift": 0.12,
+    "test_weeks": 8,
+    "test_days": 56,
+    "pre_period_days": 70,
+    "daily_noise_sd": 0.09
+  },
+  "figures": [
+    "reports/figures/geoselect/01_clusters.png",
+    "reports/figures/geoselect/02_power_ladder.png",
+    "reports/figures/geoselect/03_monitoring.png",
+    "reports/figures/geoselect/04_final_readout.png"
+  ],
+  "extra": {
+    "census_data_source": "US Census ACS 2018-2022 5-Year Summary File (table-based, www2.census.gov, no API key) + 2023 Census Gazetteer cousubs file; api.census.gov Data API requires a key for data queries (302->missing_key.html) so the key-free bulk distribution was used instead - same underlying ACS 5yr estimates, real MA geography.",
+    "synthetic_assumptions": "baseline_kpi_rate is a SYNTHETIC performance proxy correlated with real demographics (see census_data.synth_baseline_kpi); the test window outcomes (run_test.py) and monitoring are simulated daily conversions with a known injected true lift.",
+    "verdict": {
+      "label": "detected_but_underpowered_design",
+      "detected_significant": true,
+      "underpowered": true,
+      "design_mde": 0.12715858553752668,
+      "true_lift": 0.12,
+      "measured_lift": 0.04579303116963685,
+      "ci_covers_truth": false
+    },
+    "final_readout": {
+      "lift": 0.04579303116963685,
+      "counterfactual_post_total": 2776.8400758533508,
+      "actual_post_total": 2904.0,
+      "abs_effect": 127.15992414664925,
+      "control_ratio": 1.0911820480404553,
+      "n_pre": 10,
+      "n_post": 8,
+      "ci_low": 0.04035708873111257,
+      "ci_high": 0.04932109988098006,
+      "ci_level": 0.09999999999999998,
+      "boot_se": 0.036794697433784516,
+      "true_lift": 0.12,
+      "method": "change_ratio_did",
+      "ci_covers_truth": false,
+      "lift_2x2_ratio": 0.04579303116963685,
+      "lift_2x2_additive": 0.04626026805015118
+    }
+  }
+}

@@ -1,11 +1,718 @@
 {
-  "seed": 42,
-  "n_geos": 40,
-  "frac_treated": 0.45,
-  "n_days": 180,
-  "campaign_start_day": 120,
-  "true_lift": 0.12,
-  "n_rows": 7200,
-  "n_treated_geos": 18,
-  "n_control_geos": 22
+  "schema_version": "2.0",
+  "generator": {
+    "seed": 20260,
+    "small": false,
+    "n_weeks": 156,
+    "start_date": "2023-01-02",
+    "effect_multiplier": 1.0,
+    "n_zips": 1090,
+    "n_counties": 39,
+    "regions": {
+      "EM": "Eastmoor",
+      "NV": "Northvale"
+    }
+  },
+  "conventions": {
+    "lift_sign": "positive = channel contribution = volume lost when the channel is paused",
+    "roi": "incremental sales x value_per_sale / spend (expected values, whole timeline, incl. carryover)",
+    "value_per_sale": 1500.0,
+    "week_idx": "0-based weeks from start_date (Mondays)"
+  },
+  "totals": {
+    "qs": 7542631.41200678,
+    "rated": 4937597.11553395,
+    "sales": 484651.96717262
+  },
+  "channels": {
+    "tv": {
+      "label": "TV / Brand",
+      "params": {
+        "adstock_decay": 0.7,
+        "adstock_normalized": true,
+        "hill_slope": 1.0,
+        "half_sat_ratio": 1.0,
+        "half_sat_spend_per_served_capita": 0.01031117,
+        "half_sat_national_weekly_spend": 683630.30514671,
+        "max_effect": 0.22,
+        "stage_mult": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "recapture": 0.0,
+        "served_pop": 66300004.0
+      },
+      "total_spend": 104404640.74261944,
+      "incremental": {
+        "qs": 547949.21390972,
+        "rated": 350333.94685722,
+        "sales": 31620.63419552
+      },
+      "roi": 0.45429926,
+      "marginal_roi": 0.22880538,
+      "cost_per_incremental": {
+        "qs": 190.5370755,
+        "rated": 298.0146277,
+        "sales": 3301.78832268
+      },
+      "incremental_per_1k_spend": {
+        "qs": 5.24832239,
+        "rated": 3.35553999,
+        "sales": 0.30286618
+      },
+      "contribution_share": {
+        "qs": 0.07264696,
+        "rated": 0.07095232,
+        "sales": 0.065244
+      },
+      "by_year": {
+        "year1": {
+          "spend": 33527912.84732787,
+          "incremental": {
+            "qs": 164055.54612008,
+            "rated": 104885.14741835,
+            "sales": 9467.58611174
+          },
+          "roi": 0.42356884,
+          "cost_per_incremental_sales": 3541.33698407
+        },
+        "year2": {
+          "spend": 38624282.88543023,
+          "incremental": {
+            "qs": 193864.45054951,
+            "rated": 123950.00535349,
+            "sales": 11187.10675441
+          },
+          "roi": 0.43445881,
+          "cost_per_incremental_sales": 3452.57122627
+        },
+        "year3": {
+          "spend": 32252445.00986135,
+          "incremental": {
+            "qs": 190029.21724012,
+            "rated": 121498.79408538,
+            "sales": 10965.94132937
+          },
+          "roi": 0.51000512,
+          "cost_per_incremental_sales": 2941.1469605
+        }
+      }
+    },
+    "social": {
+      "label": "Social",
+      "params": {
+        "adstock_decay": 0.4,
+        "adstock_normalized": true,
+        "hill_slope": 1.3,
+        "half_sat_ratio": 0.9,
+        "half_sat_spend_per_served_capita": 0.00304663,
+        "half_sat_national_weekly_spend": 201991.7834971,
+        "max_effect": 0.22,
+        "stage_mult": [
+          1.0,
+          1.0,
+          1.15
+        ],
+        "recapture": 0.0,
+        "served_pop": 66300004.0
+      },
+      "total_spend": 36007821.9418295,
+      "incremental": {
+        "qs": 588347.89532366,
+        "rated": 376205.74619752,
+        "sales": 39023.22998815
+      },
+      "roi": 1.62561471,
+      "marginal_roi": 0.94649711,
+      "cost_per_incremental": {
+        "qs": 61.20158197,
+        "rated": 95.71310993,
+        "sales": 922.72787139
+      },
+      "incremental_per_1k_spend": {
+        "qs": 16.33944692,
+        "rated": 10.44788954,
+        "sales": 1.08374314
+      },
+      "contribution_share": {
+        "qs": 0.078003,
+        "rated": 0.07619207,
+        "sales": 0.08051805
+      },
+      "by_year": {
+        "year1": {
+          "spend": 8720662.3978826,
+          "incremental": {
+            "qs": 145248.8334479,
+            "rated": 92872.7107963,
+            "sales": 9633.73319159
+          },
+          "roi": 1.657053,
+          "cost_per_incremental_sales": 905.22149871
+        },
+        "year2": {
+          "spend": 12513417.41908476,
+          "incremental": {
+            "qs": 202231.49448291,
+            "rated": 129314.83491164,
+            "sales": 13412.97206293
+          },
+          "roi": 1.60783081,
+          "cost_per_incremental_sales": 932.93398066
+        },
+        "year3": {
+          "spend": 14773742.12486215,
+          "incremental": {
+            "qs": 240867.56739285,
+            "rated": 154018.20048958,
+            "sales": 15976.52473363
+          },
+          "roi": 1.62212031,
+          "cost_per_incremental_sales": 924.71562941
+        }
+      },
+      "last_touch_claimed": {
+        "qs": 1647374.10690624,
+        "rated": 902893.79087406,
+        "sales": 31218.58399052
+      },
+      "last_touch_bias": {
+        "qs": 2.8,
+        "rated": 2.4,
+        "sales": 0.8
+      },
+      "last_touch_cost_per": {
+        "qs": 21.85770785,
+        "rated": 39.88046247,
+        "sales": 1153.40983924
+      }
+    },
+    "search_brand": {
+      "label": "Paid Search - Branded",
+      "params": {
+        "adstock_decay": 0.1,
+        "adstock_normalized": true,
+        "hill_slope": 1.5,
+        "half_sat_ratio": 0.35,
+        "half_sat_spend_per_served_capita": 0.00060446,
+        "half_sat_national_weekly_spend": 40075.9903779,
+        "max_effect": 0.085,
+        "stage_mult": [
+          1.0,
+          1.2,
+          1.7
+        ],
+        "recapture": 0.4,
+        "served_pop": 66300004.0
+      },
+      "total_spend": 18049867.02781782,
+      "incremental": {
+        "qs": 219522.1789263,
+        "rated": 168397.7513188,
+        "sales": 21537.91007576
+      },
+      "roi": 1.78986721,
+      "marginal_roi": 0.44422608,
+      "cost_per_incremental": {
+        "qs": 82.22343235,
+        "rated": 107.18591481,
+        "sales": 838.05099772
+      },
+      "incremental_per_1k_spend": {
+        "qs": 12.16198317,
+        "rated": 9.32958404,
+        "sales": 1.19324481
+      },
+      "contribution_share": {
+        "qs": 0.02910419,
+        "rated": 0.0341052,
+        "sales": 0.04443995
+      },
+      "by_year": {
+        "year1": {
+          "spend": 5762841.99774608,
+          "incremental": {
+            "qs": 67044.92318989,
+            "rated": 51428.01898749,
+            "sales": 6578.28267876
+          },
+          "roi": 1.71224962,
+          "cost_per_incremental_sales": 876.04049251
+        },
+        "year2": {
+          "spend": 6061863.8000978,
+          "incremental": {
+            "qs": 73599.92577631,
+            "rated": 56460.39770321,
+            "sales": 7220.89637217
+          },
+          "roi": 1.78680104,
+          "cost_per_incremental_sales": 839.48910048
+        },
+        "year3": {
+          "spend": 6225161.22997395,
+          "incremental": {
+            "qs": 78877.3299601,
+            "rated": 60509.33462811,
+            "sales": 7738.73102483
+          },
+          "roi": 1.86470617,
+          "cost_per_incremental_sales": 804.41628091
+        }
+      },
+      "last_touch_claimed": {
+        "qs": 365870.2982105,
+        "rated": 280662.91886467,
+        "sales": 35896.51679294
+      },
+      "last_touch_bias": {
+        "qs": 1.66666667,
+        "rated": 1.66666667,
+        "sales": 1.66666667
+      },
+      "last_touch_cost_per": {
+        "qs": 49.33405941,
+        "rated": 64.31154889,
+        "sales": 502.83059863
+      }
+    },
+    "search_nonbrand": {
+      "label": "Paid Search - Non-branded",
+      "params": {
+        "adstock_decay": 0.2,
+        "adstock_normalized": true,
+        "hill_slope": 1.2,
+        "half_sat_ratio": 0.6,
+        "half_sat_spend_per_served_capita": 0.00256148,
+        "half_sat_national_weekly_spend": 169826.2436272,
+        "max_effect": 0.145,
+        "stage_mult": [
+          1.0,
+          1.2,
+          1.6
+        ],
+        "recapture": 0.15,
+        "served_pop": 66300004.0
+      },
+      "total_spend": 45886559.82397432,
+      "incremental": {
+        "qs": 417869.79145353,
+        "rated": 320550.51176721,
+        "sales": 38586.93055377
+      },
+      "roi": 1.26138015,
+      "marginal_roi": 0.50808753,
+      "cost_per_incremental": {
+        "qs": 109.81066534,
+        "rated": 143.14923277,
+        "sales": 1189.17361825
+      },
+      "incremental_per_1k_spend": {
+        "qs": 9.10658356,
+        "rated": 6.9857168,
+        "sales": 0.8409201
+      },
+      "contribution_share": {
+        "qs": 0.05540106,
+        "rated": 0.06492035,
+        "sales": 0.07961781
+      },
+      "by_year": {
+        "year1": {
+          "spend": 14918493.9756007,
+          "incremental": {
+            "qs": 128430.91066731,
+            "rated": 98515.92126096,
+            "sales": 11859.92613484
+          },
+          "roi": 1.19247219,
+          "cost_per_incremental_sales": 1257.8909688
+        },
+        "year2": {
+          "spend": 18002969.98207108,
+          "incremental": {
+            "qs": 149095.26102792,
+            "rated": 114377.25401153,
+            "sales": 13766.98330895
+          },
+          "roi": 1.14705935,
+          "cost_per_incremental_sales": 1307.69171271
+        },
+        "year3": {
+          "spend": 12965095.86630254,
+          "incremental": {
+            "qs": 140343.6197583,
+            "rated": 107657.33649472,
+            "sales": 12960.02110997
+          },
+          "roi": 1.49941287,
+          "cost_per_incremental_sales": 1000.39157007
+        }
+      },
+      "last_touch_claimed": {
+        "qs": 491611.51935709,
+        "rated": 377118.2491379,
+        "sales": 45396.38888679
+      },
+      "last_touch_bias": {
+        "qs": 1.17647059,
+        "rated": 1.17647059,
+        "sales": 1.17647059
+      },
+      "last_touch_cost_per": {
+        "qs": 93.33906554,
+        "rated": 121.67684786,
+        "sales": 1010.79757552
+      }
+    },
+    "dsp_a": {
+      "label": "Programmatic DSP - Vendor A",
+      "params": {
+        "adstock_decay": 0.5,
+        "adstock_normalized": true,
+        "hill_slope": 1.0,
+        "half_sat_ratio": 1.2,
+        "half_sat_spend_per_served_capita": 0.00520213,
+        "half_sat_national_weekly_spend": 187016.06703516,
+        "max_effect": 0.29,
+        "stage_mult": [
+          1.0,
+          1.43,
+          2.9
+        ],
+        "recapture": 0.0,
+        "served_pop": 35949869.0
+      },
+      "total_spend": 20727329.80966346,
+      "incremental": {
+        "qs": 321157.21725208,
+        "rated": 293847.53775297,
+        "sales": 53738.83984639
+      },
+      "roi": 3.88898428,
+      "marginal_roi": 2.15358844,
+      "cost_per_incremental": {
+        "qs": 64.53951117,
+        "rated": 70.53770118,
+        "sales": 385.70482483
+      },
+      "incremental_per_1k_spend": {
+        "qs": 15.49438448,
+        "rated": 14.17681585,
+        "sales": 2.59265619
+      },
+      "contribution_share": {
+        "qs": 0.04257894,
+        "rated": 0.05951225,
+        "sales": 0.1108813
+      },
+      "by_year": {
+        "year1": {
+          "spend": 5391266.97141492,
+          "incremental": {
+            "qs": 73634.88038001,
+            "rated": 67368.62055079,
+            "sales": 12321.12714722
+          },
+          "roi": 3.4280793,
+          "cost_per_incremental_sales": 437.56280631
+        },
+        "year2": {
+          "spend": 7920037.79061301,
+          "incremental": {
+            "qs": 122435.43059092,
+            "rated": 112023.98876821,
+            "sales": 20487.78282075
+          },
+          "roi": 3.88024338,
+          "cost_per_incremental_sales": 386.5736893
+        },
+        "year3": {
+          "spend": 7416025.04763553,
+          "incremental": {
+            "qs": 125086.90628115,
+            "rated": 114454.92843396,
+            "sales": 20929.92987842
+          },
+          "roi": 4.23338576,
+          "cost_per_incremental_sales": 354.32632076
+        }
+      }
+    },
+    "dsp_b": {
+      "label": "Programmatic DSP - Vendor B",
+      "params": {
+        "adstock_decay": 0.5,
+        "adstock_normalized": true,
+        "hill_slope": 1.0,
+        "half_sat_ratio": 1.0,
+        "half_sat_spend_per_served_capita": 0.00269307,
+        "half_sat_national_weekly_spend": 87018.13150901,
+        "max_effect": 0.2,
+        "stage_mult": [
+          1.0,
+          0.67,
+          0.05
+        ],
+        "recapture": 0.0,
+        "served_pop": 32311917.0
+      },
+      "total_spend": 14153147.74975675,
+      "incremental": {
+        "qs": 259595.16333289,
+        "rated": 111165.09648231,
+        "sales": 748.83919307
+      },
+      "roi": 0.07936459,
+      "marginal_roi": 0.03887407,
+      "cost_per_incremental": {
+        "qs": 54.5200749,
+        "rated": 127.31647071,
+        "sales": 18900.1161807
+      },
+      "incremental_per_1k_spend": {
+        "qs": 18.34186768,
+        "rated": 7.8544433,
+        "sales": 0.05290973
+      },
+      "contribution_share": {
+        "qs": 0.03441706,
+        "rated": 0.02251401,
+        "sales": 0.00154511
+      },
+      "by_year": {
+        "year1": {
+          "spend": 4669931.10108334,
+          "incremental": {
+            "qs": 79032.31335996,
+            "rated": 33842.70716779,
+            "sales": 227.9972422
+          },
+          "roi": 0.0732336,
+          "cost_per_incremental_sales": 20482.40169943
+        },
+        "year2": {
+          "spend": 4139786.03738605,
+          "incremental": {
+            "qs": 82479.01828885,
+            "rated": 35319.64009894,
+            "sales": 237.90922223
+          },
+          "roi": 0.08620345,
+          "cost_per_incremental_sales": 17400.69593993
+        },
+        "year3": {
+          "spend": 5343430.61128736,
+          "incremental": {
+            "qs": 98083.83168408,
+            "rated": 42002.74921558,
+            "sales": 282.93272864
+          },
+          "roi": 0.07942446,
+          "cost_per_incremental_sales": 18885.86957382
+        }
+      }
+    }
+  },
+  "search": {
+    "true_recapture_brand": 0.4,
+    "true_recapture_nonbrand": 0.15,
+    "note": "share of paid last-touch conversions that organic search would have captured anyway"
+  },
+  "dsp_site_last_touch": {
+    "claimed": {
+      "qs": 871128.57087745,
+      "rated": 607518.95135291,
+      "sales": 81731.5185592
+    },
+    "true_incremental": {
+      "qs": 580752.38058497,
+      "rated": 405012.63423527,
+      "sales": 54487.67903947
+    },
+    "bias": {
+      "qs": 1.5,
+      "rated": 1.5,
+      "sales": 1.5
+    }
+  },
+  "dsp_vendor_reporting": {
+    "dsp_a": {
+      "vendor_bias_vs_true_qs": 4.5
+    },
+    "dsp_b": {
+      "vendor_bias_vs_true_qs": 5.5
+    }
+  },
+  "dsp_b_vendor_switch": {
+    "week_idx": 96,
+    "attribution_level_shift": -0.2,
+    "reporting_dip_weeks": [
+      100,
+      101
+    ],
+    "true_effect_change": 0.0
+  },
+  "concurrent_test": {
+    "region": "EM",
+    "share_of_zips": 0.07,
+    "channel": "social",
+    "spend_multiplier": 2.0,
+    "start": 106,
+    "end": 121
+  },
+  "tests": {
+    "meta": {
+      "region": "EM",
+      "unit_level": "county",
+      "design_window": [
+        0,
+        57
+      ],
+      "readout_pre_window": [
+        51,
+        57
+      ],
+      "test_window": [
+        58,
+        65
+      ],
+      "leakage": 0.25,
+      "arms": {
+        "holdout": [
+          "social"
+        ]
+      },
+      "spillover": null,
+      "notes": "Social geo holdout; 8 test weeks; 57-week design history (train 1-50, pseudo-post 51-57).",
+      "region_wide_holdout_lift": {
+        "holdout": {
+          "qs": 0.04041754,
+          "rated": 0.04046068,
+          "sales": 0.0459401,
+          "cost_per_incremental_sales": 746.65930588
+        }
+      }
+    },
+    "search": {
+      "region": "NV",
+      "unit_level": "county",
+      "design_window": [
+        60,
+        78
+      ],
+      "readout_pre_window": [
+        69,
+        78
+      ],
+      "test_window": [
+        79,
+        84
+      ],
+      "leakage": 0.0,
+      "arms": {
+        "all_search": [
+          "search_brand",
+          "search_nonbrand"
+        ],
+        "branded_only": [
+          "search_brand"
+        ]
+      },
+      "spillover": null,
+      "notes": "Two treatment arms + control + BAU donors; 10 pre / 6 test weeks.",
+      "region_wide_holdout_lift": {
+        "all_search": {
+          "qs": 0.08197791,
+          "rated": 0.09351076,
+          "sales": 0.10988303,
+          "cost_per_incremental_sales": 1065.68843484,
+          "organic_recapture_qs": 0.25692218
+        },
+        "branded_only": {
+          "qs": 0.02831011,
+          "rated": 0.03228364,
+          "sales": 0.03944062,
+          "cost_per_incremental_sales": 777.65307653,
+          "organic_recapture_qs": 0.4
+        }
+      }
+    },
+    "dsp_a": {
+      "region": "NV",
+      "unit_level": "zip",
+      "design_window": [
+        95,
+        111
+      ],
+      "readout_pre_window": [
+        96,
+        111
+      ],
+      "test_window": [
+        112,
+        123
+      ],
+      "leakage": 0.03,
+      "arms": {
+        "holdout": [
+          "dsp_a"
+        ]
+      },
+      "spillover": {
+        "enabled": true,
+        "radius_mi": 30.0,
+        "decay_mi": 10.0,
+        "strength": 0.3
+      },
+      "notes": "Contiguous zip patch vs Mahalanobis-matched twin patch; 12 test weeks, 16 readout-pre weeks. v2 design change: the original 6-week / 0.5M-pop plan had a ~29% sales MDE (pre-period power analysis), so the window was lengthened and the holdout is sized by the module's power ladder.",
+      "region_wide_holdout_lift": {
+        "holdout": {
+          "qs": 0.07787628,
+          "rated": 0.10550146,
+          "sales": 0.18297808,
+          "cost_per_incremental_sales": 367.22869765
+        }
+      }
+    },
+    "dsp_b": {
+      "region": "EM",
+      "unit_level": "zip",
+      "design_window": [
+        90,
+        111
+      ],
+      "readout_pre_window": [
+        101,
+        111
+      ],
+      "test_window": [
+        112,
+        123
+      ],
+      "leakage": 0.03,
+      "arms": {
+        "holdout": [
+          "dsp_b"
+        ]
+      },
+      "spillover": {
+        "enabled": true,
+        "radius_mi": 30.0,
+        "decay_mi": 10.0,
+        "strength": 0.3
+      },
+      "notes": "K-means zip cluster treated vs synthetic control of other clusters; 12 test weeks (lengthened from 8 for sales-stage power, same calendar as Vendor A).",
+      "region_wide_holdout_lift": {
+        "holdout": {
+          "qs": 0.06066953,
+          "rated": 0.04092279,
+          "sales": 0.00304447,
+          "cost_per_incremental_sales": 18442.38513792
+        }
+      }
+    }
+  },
+  "attribution_bias_note": "last_touch_bias = last-touch claimed / true incremental (>1 over-claims)"
 }

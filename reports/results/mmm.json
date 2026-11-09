@@ -1,0 +1,2280 @@
+{
+  "module": "mmm",
+  "schema_version": "1.0",
+  "generated_at": "2026-11-07T11:06:01",
+  "seed": 20260,
+  "small": false,
+  "headline": {
+    "channels": [
+      "tv",
+      "social",
+      "search_brand",
+      "search_nonbrand",
+      "dsp_a",
+      "dsp_b"
+    ],
+    "roi_mae_uncalibrated": 0.3551355181251581,
+    "roi_mae_calibrated": 0.38221593037503276,
+    "roi_hdi_coverage_uncalibrated": 1.0,
+    "roi_hdi_coverage_calibrated": 1.0,
+    "channels_improved_by_calibration": [
+      "search_brand",
+      "dsp_a"
+    ],
+    "optimizer_gain_sales_mean": 5186.163896359666,
+    "optimizer_gain_sales_hdi": [
+      2016.2106715437694,
+      8400.400163235987
+    ],
+    "optimizer_prob_better": 0.995,
+    "optimizer_multipliers": {
+      "tv": 0.7000000000000001,
+      "social": 1.2999999999999998,
+      "search_brand": 1.3,
+      "search_nonbrand": 1.2124383956744778,
+      "dsp_a": 1.2999999999999998,
+      "dsp_b": 0.7
+    },
+    "cpa_status_quo": 1214.1758536004713,
+    "cpa_optimized": 1125.6121599727292,
+    "next_test": "search_brand",
+    "calibration_sources": {
+      "meta": "reports/results/meta.json",
+      "search": "reports/results/search.json",
+      "dsp_a": "reports/results/dsp.json",
+      "dsp_b": "reports/results/dsp.json"
+    },
+    "stub_tests": [],
+    "calibration_uses_stub": false,
+    "runtime_seconds": 112.56521368026733,
+    "roi_mae_calibrated_powered_sensitivity": 0.3624879459842108,
+    "optimizer_true_gain_sales": 4717.513168593738,
+    "optimizer_true_gain_pct": 0.06851464885521281,
+    "diag_uncalibrated": {
+      "max_r_hat": 1.0086303659752391,
+      "min_ess_bulk": 1427.555334339563,
+      "min_ess_tail": 1127.2635402154679,
+      "divergences": 2,
+      "n_samples": 2000,
+      "divergence_rate": 0.001,
+      "train_mape": 0.02716492628828363,
+      "train_r2": 0.9365019273186467,
+      "train_ppc_coverage90": 0.958041958041958,
+      "train_weeks": 143,
+      "holdout_mape": 0.037298507298368894,
+      "holdout_r2": 0.8244101928374241,
+      "holdout_ppc_coverage90": 1.0,
+      "holdout_weeks": 13,
+      "fit_seconds": 27.14017152786255
+    },
+    "diag_calibrated": {
+      "max_r_hat": 1.010080252009559,
+      "min_ess_bulk": 1236.8016783697467,
+      "min_ess_tail": 1154.2276468403932,
+      "divergences": 5,
+      "n_samples": 2000,
+      "divergence_rate": 0.0025,
+      "train_mape": 0.027091977887188017,
+      "train_r2": 0.9362967321057265,
+      "train_ppc_coverage90": 0.965034965034965,
+      "train_weeks": 143,
+      "holdout_mape": 0.03641359279424627,
+      "holdout_r2": 0.8323031055810418,
+      "holdout_ppc_coverage90": 1.0,
+      "holdout_weeks": 13,
+      "fit_seconds": 26.30012011528015
+    },
+    "diag_calibrated_powered": {
+      "max_r_hat": 1.0078719101657654,
+      "min_ess_bulk": 667.195010393209,
+      "min_ess_tail": 707.8161434695962,
+      "divergences": 0,
+      "n_samples": 2000,
+      "divergence_rate": 0.0,
+      "train_mape": 0.027094096791664232,
+      "train_r2": 0.9374013797752001,
+      "train_ppc_coverage90": 0.951048951048951,
+      "train_weeks": 143,
+      "holdout_mape": 0.04068961725271611,
+      "holdout_r2": 0.7837893654585444,
+      "holdout_ppc_coverage90": 0.9230769230769231,
+      "holdout_weeks": 13,
+      "fit_seconds": 19.300889492034912
+    }
+  },
+  "estimates": [
+    {
+      "test": "mmm",
+      "arm": "tv",
+      "metric": "roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 0.4166445430105264,
+      "ci_low": 0.1089508272758744,
+      "ci_high": 0.7392526061510283,
+      "ci_level": 0.9,
+      "sd": 0.24052744780474716,
+      "truth": 0.45429926,
+      "truth_key": "ground_truth.channels.tv.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "tv",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 0.193694055797656,
+      "ci_low": 0.06096315847982415,
+      "ci_high": 0.35772351942316943,
+      "ci_level": 0.9,
+      "sd": 0.0988432870511119,
+      "truth": 0.22880538,
+      "truth_key": "ground_truth.channels.tv.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "tv",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 0.4161737829980697,
+      "ci_low": 0.09307891416216464,
+      "ci_high": 0.7050398724860537,
+      "ci_level": 0.9,
+      "sd": 0.21132928313536392,
+      "truth": 0.45429926,
+      "truth_key": "ground_truth.channels.tv.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "tv",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 0.2011827687142464,
+      "ci_low": 0.0453262516142602,
+      "ci_high": 0.3450303936830458,
+      "ci_level": 0.9,
+      "sd": 0.09924646054123255,
+      "truth": 0.22880538,
+      "truth_key": "ground_truth.channels.tv.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "tv",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 0.34631642914482286,
+      "ci_low": 0.06622608265327401,
+      "ci_high": 0.6059666994107549,
+      "ci_level": 0.9,
+      "sd": 0.18898455203239536,
+      "truth": 0.45429926,
+      "truth_key": "ground_truth.channels.tv.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "tv",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 0.16276795999804008,
+      "ci_low": 0.031247839749645543,
+      "ci_high": 0.2828639758278843,
+      "ci_level": 0.9,
+      "sd": 0.08411874194551958,
+      "truth": 0.22880538,
+      "truth_key": "ground_truth.channels.tv.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "social",
+      "metric": "roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 1.9461064185401598,
+      "ci_low": 1.1171006505213048,
+      "ci_high": 2.8020611417497685,
+      "ci_level": 0.9,
+      "sd": 0.5457793216255852,
+      "truth": 1.62561471,
+      "truth_key": "ground_truth.channels.social.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "social",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 1.4908366710523586,
+      "ci_low": 0.887555737477952,
+      "ci_high": 2.0712096335130146,
+      "ci_level": 0.9,
+      "sd": 0.3681624543466313,
+      "truth": 0.94649711,
+      "truth_key": "ground_truth.channels.social.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "social",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 2.018669363236759,
+      "ci_low": 1.1514778596711566,
+      "ci_high": 2.818271506358318,
+      "ci_level": 0.9,
+      "sd": 0.5743590379697107,
+      "truth": 1.62561471,
+      "truth_key": "ground_truth.channels.social.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "social",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 1.4846171274524316,
+      "ci_low": 0.9234761568636479,
+      "ci_high": 2.122991968890656,
+      "ci_level": 0.9,
+      "sd": 0.35820021046100986,
+      "truth": 0.94649711,
+      "truth_key": "ground_truth.channels.social.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "social",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 2.367270598593095,
+      "ci_low": 1.620820046177584,
+      "ci_high": 3.276278469220122,
+      "ci_level": 0.9,
+      "sd": 0.541570842221632,
+      "truth": 1.62561471,
+      "truth_key": "ground_truth.channels.social.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "social",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 1.624076790618616,
+      "ci_low": 1.092779953283252,
+      "ci_high": 2.1827038369946625,
+      "ci_level": 0.9,
+      "sd": 0.3341198019542006,
+      "truth": 0.94649711,
+      "truth_key": "ground_truth.channels.social.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_brand",
+      "metric": "roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 1.414266105278118,
+      "ci_low": 0.06205069113325332,
+      "ci_high": 3.0422808169673488,
+      "ci_level": 0.9,
+      "sd": 1.2683863604516081,
+      "truth": 1.78986721,
+      "truth_key": "ground_truth.channels.search_brand.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_brand",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 0.878965565043923,
+      "ci_low": 0.04109878491829747,
+      "ci_high": 1.975397781423834,
+      "ci_level": 0.9,
+      "sd": 0.9432497636288648,
+      "truth": 0.44422608,
+      "truth_key": "ground_truth.channels.search_brand.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_brand",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 1.4253305572574986,
+      "ci_low": 0.10823004824262879,
+      "ci_high": 2.8713110201022967,
+      "ci_level": 0.9,
+      "sd": 1.1291491933689002,
+      "truth": 1.78986721,
+      "truth_key": "ground_truth.channels.search_brand.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_brand",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 0.8818236428610413,
+      "ci_low": 0.03373111471160994,
+      "ci_high": 2.031907863108951,
+      "ci_level": 0.9,
+      "sd": 0.8683009424619615,
+      "truth": 0.44422608,
+      "truth_key": "ground_truth.channels.search_brand.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_brand",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 2.3116967373503092,
+      "ci_low": 1.6004070835064275,
+      "ci_high": 2.9693114350430796,
+      "ci_level": 0.9,
+      "sd": 0.4774306658929502,
+      "truth": 1.78986721,
+      "truth_key": "ground_truth.channels.search_brand.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_brand",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 1.4659214139139563,
+      "ci_low": 0.4783323196187879,
+      "ci_high": 2.349066868462011,
+      "ci_level": 0.9,
+      "sd": 0.6660204910517937,
+      "truth": 0.44422608,
+      "truth_key": "ground_truth.channels.search_brand.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_nonbrand",
+      "metric": "roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 0.9652733788869557,
+      "ci_low": 0.14731917242586817,
+      "ci_high": 1.7099848369021053,
+      "ci_level": 0.9,
+      "sd": 0.5680642587116388,
+      "truth": 1.26138015,
+      "truth_key": "ground_truth.channels.search_nonbrand.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_nonbrand",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 0.47533732863169254,
+      "ci_low": 0.10308523582680255,
+      "ci_high": 0.8505297288304029,
+      "ci_level": 0.9,
+      "sd": 0.23070409694104474,
+      "truth": 0.50808753,
+      "truth_key": "ground_truth.channels.search_nonbrand.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_nonbrand",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 0.8536281264330011,
+      "ci_low": 0.1333191943353275,
+      "ci_high": 1.4937985078920528,
+      "ci_level": 0.9,
+      "sd": 0.4857860939799846,
+      "truth": 1.26138015,
+      "truth_key": "ground_truth.channels.search_nonbrand.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_nonbrand",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 0.4435355311822841,
+      "ci_low": 0.09211645035778881,
+      "ci_high": 0.8125433539220737,
+      "ci_level": 0.9,
+      "sd": 0.23722142493748696,
+      "truth": 0.50808753,
+      "truth_key": "ground_truth.channels.search_nonbrand.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_nonbrand",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 1.4372310326969302,
+      "ci_low": 0.9667228589972214,
+      "ci_high": 1.8370805760855846,
+      "ci_level": 0.9,
+      "sd": 0.28925226009475635,
+      "truth": 1.26138015,
+      "truth_key": "ground_truth.channels.search_nonbrand.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "search_nonbrand",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 0.6315992408929212,
+      "ci_low": 0.36681325894833733,
+      "ci_high": 0.9069851176373073,
+      "ci_level": 0.9,
+      "sd": 0.16894577676701658,
+      "truth": 0.50808753,
+      "truth_key": "ground_truth.channels.search_nonbrand.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_a",
+      "metric": "roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 3.3889039396869007,
+      "ci_low": 2.7175204245289444,
+      "ci_high": 4.0686842270961705,
+      "ci_level": 0.9,
+      "sd": 0.42447906779414146,
+      "truth": 3.88898428,
+      "truth_key": "ground_truth.channels.dsp_a.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_a",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 1.3286261285428935,
+      "ci_low": 0.8327436598503121,
+      "ci_high": 1.9660841820312942,
+      "ci_level": 0.9,
+      "sd": 0.34664998663425356,
+      "truth": 2.15358844,
+      "truth_key": "ground_truth.channels.dsp_a.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_a",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 3.4417865167113875,
+      "ci_low": 2.6852134516150037,
+      "ci_high": 4.037971375791915,
+      "ci_level": 0.9,
+      "sd": 0.44442920470930414,
+      "truth": 3.88898428,
+      "truth_key": "ground_truth.channels.dsp_a.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_a",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 1.3324436019351886,
+      "ci_low": 0.8283064607982756,
+      "ci_high": 1.94868859609192,
+      "ci_level": 0.9,
+      "sd": 0.34451986390682193,
+      "truth": 2.15358844,
+      "truth_key": "ground_truth.channels.dsp_a.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_a",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 3.3065455523012073,
+      "ci_low": 2.5647033302432414,
+      "ci_high": 3.983376670355891,
+      "ci_level": 0.9,
+      "sd": 0.4311382115671325,
+      "truth": 3.88898428,
+      "truth_key": "ground_truth.channels.dsp_a.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_a",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 1.265244730920328,
+      "ci_low": 0.6957225372408861,
+      "ci_high": 1.7392309510257304,
+      "ci_level": 0.9,
+      "sd": 0.33100750798556694,
+      "truth": 2.15358844,
+      "truth_key": "ground_truth.channels.dsp_a.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_b",
+      "metric": "roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 0.6802430570732899,
+      "ci_low": 0.0635323187509342,
+      "ci_high": 1.3578620396269194,
+      "ci_level": 0.9,
+      "sd": 0.5317200143239904,
+      "truth": 0.07936459,
+      "truth_key": "ground_truth.channels.dsp_b.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_b",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_uncalibrated",
+      "estimate": 0.3255740469791304,
+      "ci_low": 0.02470710022061832,
+      "ci_high": 0.6645257358742271,
+      "ci_level": 0.9,
+      "sd": 0.2551973533862243,
+      "truth": 0.03887407,
+      "truth_key": "ground_truth.channels.dsp_b.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_b",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 0.7219936024133947,
+      "ci_low": 0.051422584085587,
+      "ci_high": 1.4269850534693174,
+      "ci_level": 0.9,
+      "sd": 0.5706448763712941,
+      "truth": 0.07936459,
+      "truth_key": "ground_truth.channels.dsp_b.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_b",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated",
+      "estimate": 0.350078412801467,
+      "ci_low": 0.03252970026861494,
+      "ci_high": 0.695471556823794,
+      "ci_level": 0.9,
+      "sd": 0.26643875569260034,
+      "truth": 0.03887407,
+      "truth_key": "ground_truth.channels.dsp_b.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_b",
+      "metric": "roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 0.12453440871096018,
+      "ci_low": 0.05144743703881513,
+      "ci_high": 0.22046931388991214,
+      "ci_level": 0.9,
+      "sd": 0.0722857405540415,
+      "truth": 0.07936459,
+      "truth_key": "ground_truth.channels.dsp_b.roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    },
+    {
+      "test": "mmm",
+      "arm": "dsp_b",
+      "metric": "marginal_roi",
+      "method": "pymc_mmm_calibrated_powered",
+      "estimate": 0.058211909701757596,
+      "ci_low": 0.017833501078662484,
+      "ci_high": 0.10776042124825491,
+      "ci_level": 0.9,
+      "sd": 0.0328038019842207,
+      "truth": 0.03887407,
+      "truth_key": "ground_truth.channels.dsp_b.marginal_roi",
+      "units": "$ sales value per $ spend",
+      "notes": "90% HDI"
+    }
+  ],
+  "design": {
+    "horizon_weeks": 52,
+    "bounds": [
+      0.7,
+      1.3
+    ]
+  },
+  "validation": {
+    "uncalibrated": {
+      "max_r_hat": 1.0086303659752391,
+      "min_ess_bulk": 1427.555334339563,
+      "min_ess_tail": 1127.2635402154679,
+      "divergences": 2,
+      "n_samples": 2000,
+      "divergence_rate": 0.001,
+      "train_mape": 0.02716492628828363,
+      "train_r2": 0.9365019273186467,
+      "train_ppc_coverage90": 0.958041958041958,
+      "train_weeks": 143,
+      "holdout_mape": 0.037298507298368894,
+      "holdout_r2": 0.8244101928374241,
+      "holdout_ppc_coverage90": 1.0,
+      "holdout_weeks": 13
+    },
+    "calibrated": {
+      "max_r_hat": 1.010080252009559,
+      "min_ess_bulk": 1236.8016783697467,
+      "min_ess_tail": 1154.2276468403932,
+      "divergences": 5,
+      "n_samples": 2000,
+      "divergence_rate": 0.0025,
+      "train_mape": 0.027091977887188017,
+      "train_r2": 0.9362967321057265,
+      "train_ppc_coverage90": 0.965034965034965,
+      "train_weeks": 143,
+      "holdout_mape": 0.03641359279424627,
+      "holdout_r2": 0.8323031055810418,
+      "holdout_ppc_coverage90": 1.0,
+      "holdout_weeks": 13
+    },
+    "calibrated_powered": {
+      "max_r_hat": 1.0078719101657654,
+      "min_ess_bulk": 667.195010393209,
+      "min_ess_tail": 707.8161434695962,
+      "divergences": 0,
+      "n_samples": 2000,
+      "divergence_rate": 0.0,
+      "train_mape": 0.027094096791664232,
+      "train_r2": 0.9374013797752001,
+      "train_ppc_coverage90": 0.951048951048951,
+      "train_weeks": 143,
+      "holdout_mape": 0.04068961725271611,
+      "holdout_r2": 0.7837893654585444,
+      "holdout_ppc_coverage90": 0.9230769230769231,
+      "holdout_weeks": 13
+    }
+  },
+  "truth": {
+    "roi": {
+      "tv": 0.45429926,
+      "social": 1.62561471,
+      "search_brand": 1.78986721,
+      "search_nonbrand": 1.26138015,
+      "dsp_a": 3.88898428,
+      "dsp_b": 0.07936459
+    },
+    "marginal_roi": {
+      "tv": 0.22880538,
+      "social": 0.94649711,
+      "search_brand": 0.44422608,
+      "search_nonbrand": 0.50808753,
+      "dsp_a": 2.15358844,
+      "dsp_b": 0.03887407
+    },
+    "decay": {
+      "tv": 0.7,
+      "social": 0.4,
+      "search_brand": 0.1,
+      "search_nonbrand": 0.2,
+      "dsp_a": 0.5,
+      "dsp_b": 0.5
+    }
+  },
+  "figures": [
+    "reports/figures/mmm/01_data_overview.png",
+    "reports/figures/mmm/02_calibration_inputs.png",
+    "reports/figures/mmm/03_fit_ppc.png",
+    "reports/figures/mmm/04_roi_forest.png",
+    "reports/figures/mmm/05_roi_error.png",
+    "reports/figures/mmm/06_marginal_roi.png",
+    "reports/figures/mmm/07_response_curves.png",
+    "reports/figures/mmm/08_adstock_posteriors.png",
+    "reports/figures/mmm/09_contribution_area.png",
+    "reports/figures/mmm/10_contribution_waterfall.png",
+    "reports/figures/mmm/11_triangulation.png",
+    "reports/figures/mmm/12_optimizer_mix.png",
+    "reports/figures/mmm/13_optimizer_outcome.png",
+    "reports/figures/mmm/14_budget_scenarios.png",
+    "reports/figures/mmm/15_value_of_information.png",
+    "reports/figures/mmm/16_uncertainty_width.png"
+  ],
+  "extra": {
+    "roi_table": [
+      {
+        "channel": "tv",
+        "true_roi": 0.45429926,
+        "true_mroi": 0.22880538,
+        "uncalibrated_roi": 0.4166445430105264,
+        "uncalibrated_roi_lo": 0.1089508272758744,
+        "uncalibrated_roi_hi": 0.7392526061510283,
+        "uncalibrated_roi_abs_err": 0.03765471698947359,
+        "uncalibrated_roi_rel_err": -0.08288527036005648,
+        "uncalibrated_roi_covers_truth": true,
+        "uncalibrated_mroi": 0.193694055797656,
+        "uncalibrated_mroi_lo": 0.06096315847982415,
+        "uncalibrated_mroi_hi": 0.35772351942316943,
+        "calibrated_roi": 0.4161737829980697,
+        "calibrated_roi_lo": 0.09307891416216464,
+        "calibrated_roi_hi": 0.7050398724860537,
+        "calibrated_roi_abs_err": 0.03812547700193031,
+        "calibrated_roi_rel_err": -0.08392150364042043,
+        "calibrated_roi_covers_truth": true,
+        "calibrated_mroi": 0.2011827687142464,
+        "calibrated_mroi_lo": 0.0453262516142602,
+        "calibrated_mroi_hi": 0.3450303936830458,
+        "calibrated_powered_roi": 0.34631642914482286,
+        "calibrated_powered_roi_lo": 0.06622608265327401,
+        "calibrated_powered_roi_hi": 0.6059666994107549,
+        "calibrated_powered_roi_abs_err": 0.10798283085517713,
+        "calibrated_powered_roi_rel_err": -0.23769096796498662,
+        "calibrated_powered_roi_covers_truth": true,
+        "calibrated_powered_mroi": 0.16276795999804008,
+        "calibrated_powered_mroi_lo": 0.031247839749645543,
+        "calibrated_powered_mroi_hi": 0.2828639758278843
+      },
+      {
+        "channel": "social",
+        "true_roi": 1.62561471,
+        "true_mroi": 0.94649711,
+        "uncalibrated_roi": 1.9461064185401598,
+        "uncalibrated_roi_lo": 1.1171006505213048,
+        "uncalibrated_roi_hi": 2.8020611417497685,
+        "uncalibrated_roi_abs_err": 0.32049170854015974,
+        "uncalibrated_roi_rel_err": 0.1971510878738048,
+        "uncalibrated_roi_covers_truth": true,
+        "uncalibrated_mroi": 1.4908366710523586,
+        "uncalibrated_mroi_lo": 0.887555737477952,
+        "uncalibrated_mroi_hi": 2.0712096335130146,
+        "calibrated_roi": 2.018669363236759,
+        "calibrated_roi_lo": 1.1514778596711566,
+        "calibrated_roi_hi": 2.818271506358318,
+        "calibrated_roi_abs_err": 0.3930546532367589,
+        "calibrated_roi_rel_err": 0.24178832217675916,
+        "calibrated_roi_covers_truth": true,
+        "calibrated_mroi": 1.4846171274524316,
+        "calibrated_mroi_lo": 0.9234761568636479,
+        "calibrated_mroi_hi": 2.122991968890656,
+        "calibrated_powered_roi": 2.367270598593095,
+        "calibrated_powered_roi_lo": 1.620820046177584,
+        "calibrated_powered_roi_hi": 3.276278469220122,
+        "calibrated_powered_roi_abs_err": 0.7416558885930951,
+        "calibrated_powered_roi_rel_err": 0.45623103926827474,
+        "calibrated_powered_roi_covers_truth": true,
+        "calibrated_powered_mroi": 1.624076790618616,
+        "calibrated_powered_mroi_lo": 1.092779953283252,
+        "calibrated_powered_mroi_hi": 2.1827038369946625
+      },
+      {
+        "channel": "search_brand",
+        "true_roi": 1.78986721,
+        "true_mroi": 0.44422608,
+        "uncalibrated_roi": 1.414266105278118,
+        "uncalibrated_roi_lo": 0.06205069113325332,
+        "uncalibrated_roi_hi": 3.0422808169673488,
+        "uncalibrated_roi_abs_err": 0.3756011047218819,
+        "uncalibrated_roi_rel_err": -0.2098485868802982,
+        "uncalibrated_roi_covers_truth": true,
+        "uncalibrated_mroi": 0.878965565043923,
+        "uncalibrated_mroi_lo": 0.04109878491829747,
+        "uncalibrated_mroi_hi": 1.975397781423834,
+        "calibrated_roi": 1.4253305572574986,
+        "calibrated_roi_lo": 0.10823004824262879,
+        "calibrated_roi_hi": 2.8713110201022967,
+        "calibrated_roi_abs_err": 0.36453665274250135,
+        "calibrated_roi_rel_err": -0.2036668702045787,
+        "calibrated_roi_covers_truth": true,
+        "calibrated_mroi": 0.8818236428610413,
+        "calibrated_mroi_lo": 0.03373111471160994,
+        "calibrated_mroi_hi": 2.031907863108951,
+        "calibrated_powered_roi": 2.3116967373503092,
+        "calibrated_powered_roi_lo": 1.6004070835064275,
+        "calibrated_powered_roi_hi": 2.9693114350430796,
+        "calibrated_powered_roi_abs_err": 0.5218295273503093,
+        "calibrated_powered_roi_rel_err": 0.2915465038047763,
+        "calibrated_powered_roi_covers_truth": true,
+        "calibrated_powered_mroi": 1.4659214139139563,
+        "calibrated_powered_mroi_lo": 0.4783323196187879,
+        "calibrated_powered_mroi_hi": 2.349066868462011
+      },
+      {
+        "channel": "search_nonbrand",
+        "true_roi": 1.26138015,
+        "true_mroi": 0.50808753,
+        "uncalibrated_roi": 0.9652733788869557,
+        "uncalibrated_roi_lo": 0.14731917242586817,
+        "uncalibrated_roi_hi": 1.7099848369021053,
+        "uncalibrated_roi_abs_err": 0.2961067711130442,
+        "uncalibrated_roi_rel_err": -0.23474824073697703,
+        "uncalibrated_roi_covers_truth": true,
+        "uncalibrated_mroi": 0.47533732863169254,
+        "uncalibrated_mroi_lo": 0.10308523582680255,
+        "uncalibrated_mroi_hi": 0.8505297288304029,
+        "calibrated_roi": 0.8536281264330011,
+        "calibrated_roi_lo": 0.1333191943353275,
+        "calibrated_roi_hi": 1.4937985078920528,
+        "calibrated_roi_abs_err": 0.4077520235669988,
+        "calibrated_roi_rel_err": -0.32325863346351125,
+        "calibrated_roi_covers_truth": true,
+        "calibrated_mroi": 0.4435355311822841,
+        "calibrated_mroi_lo": 0.09211645035778881,
+        "calibrated_mroi_hi": 0.8125433539220737,
+        "calibrated_powered_roi": 1.4372310326969302,
+        "calibrated_powered_roi_lo": 0.9667228589972214,
+        "calibrated_powered_roi_hi": 1.8370805760855846,
+        "calibrated_powered_roi_abs_err": 0.17585088269693028,
+        "calibrated_powered_roi_rel_err": 0.13941148724825764,
+        "calibrated_powered_roi_covers_truth": true,
+        "calibrated_powered_mroi": 0.6315992408929212,
+        "calibrated_powered_mroi_lo": 0.36681325894833733,
+        "calibrated_powered_mroi_hi": 0.9069851176373073
+      },
+      {
+        "channel": "dsp_a",
+        "true_roi": 3.88898428,
+        "true_mroi": 2.15358844,
+        "uncalibrated_roi": 3.3889039396869007,
+        "uncalibrated_roi_lo": 2.7175204245289444,
+        "uncalibrated_roi_hi": 4.0686842270961705,
+        "uncalibrated_roi_abs_err": 0.5000803403130991,
+        "uncalibrated_roi_rel_err": -0.12858893333276708,
+        "uncalibrated_roi_covers_truth": true,
+        "uncalibrated_mroi": 1.3286261285428935,
+        "uncalibrated_mroi_lo": 0.8327436598503121,
+        "uncalibrated_mroi_hi": 1.9660841820312942,
+        "calibrated_roi": 3.4417865167113875,
+        "calibrated_roi_lo": 2.6852134516150037,
+        "calibrated_roi_hi": 4.037971375791915,
+        "calibrated_roi_abs_err": 0.4471977632886124,
+        "calibrated_roi_rel_err": -0.11499088993196249,
+        "calibrated_roi_covers_truth": true,
+        "calibrated_mroi": 1.3324436019351886,
+        "calibrated_mroi_lo": 0.8283064607982756,
+        "calibrated_mroi_hi": 1.94868859609192,
+        "calibrated_powered_roi": 3.3065455523012073,
+        "calibrated_powered_roi_lo": 2.5647033302432414,
+        "calibrated_powered_roi_hi": 3.983376670355891,
+        "calibrated_powered_roi_abs_err": 0.5824387276987926,
+        "calibrated_powered_roi_rel_err": -0.14976628491252028,
+        "calibrated_powered_roi_covers_truth": true,
+        "calibrated_powered_mroi": 1.265244730920328,
+        "calibrated_powered_mroi_lo": 0.6957225372408861,
+        "calibrated_powered_mroi_hi": 1.7392309510257304
+      },
+      {
+        "channel": "dsp_b",
+        "true_roi": 0.07936459,
+        "true_mroi": 0.03887407,
+        "uncalibrated_roi": 0.6802430570732899,
+        "uncalibrated_roi_lo": 0.0635323187509342,
+        "uncalibrated_roi_hi": 1.3578620396269194,
+        "uncalibrated_roi_abs_err": 0.60087846707329,
+        "uncalibrated_roi_rel_err": 7.571115368620816,
+        "uncalibrated_roi_covers_truth": true,
+        "uncalibrated_mroi": 0.3255740469791304,
+        "uncalibrated_mroi_lo": 0.02470710022061832,
+        "uncalibrated_mroi_hi": 0.6645257358742271,
+        "calibrated_roi": 0.7219936024133947,
+        "calibrated_roi_lo": 0.051422584085587,
+        "calibrated_roi_hi": 1.4269850534693174,
+        "calibrated_roi_abs_err": 0.6426290124133948,
+        "calibrated_roi_rel_err": 8.097175483592807,
+        "calibrated_roi_covers_truth": true,
+        "calibrated_mroi": 0.350078412801467,
+        "calibrated_mroi_lo": 0.03252970026861494,
+        "calibrated_mroi_hi": 0.695471556823794,
+        "calibrated_powered_roi": 0.12453440871096018,
+        "calibrated_powered_roi_lo": 0.05144743703881513,
+        "calibrated_powered_roi_hi": 0.22046931388991214,
+        "calibrated_powered_roi_abs_err": 0.04516981871096018,
+        "calibrated_powered_roi_rel_err": 0.5691432250952242,
+        "calibrated_powered_roi_covers_truth": true,
+        "calibrated_powered_mroi": 0.058211909701757596,
+        "calibrated_powered_mroi_lo": 0.017833501078662484,
+        "calibrated_powered_mroi_hi": 0.10776042124825491
+      }
+    ],
+    "triangulation": [
+      {
+        "channel": "tv",
+        "last_touch_roi": 0.0,
+        "experiment_roi": null,
+        "experiment_roi_se": null,
+        "experiment_source": "no test",
+        "uncalibrated_roi": 0.4166445430105264,
+        "calibrated_roi": 0.4161737829980697,
+        "true_roi": 0.45429926
+      },
+      {
+        "channel": "social",
+        "last_touch_roi": 1.3015921950434621,
+        "experiment_roi": 2.646149275424829,
+        "experiment_roi_se": 4.4838063092438265,
+        "experiment_source": "reports/results/meta.json",
+        "uncalibrated_roi": 1.9461064185401598,
+        "calibrated_roi": 2.018669363236759,
+        "true_roi": 1.62561471
+      },
+      {
+        "channel": "search_brand",
+        "last_touch_roi": 2.9896342126418376,
+        "experiment_roi": 2.471883492567454,
+        "experiment_roi_se": 5.587041126822003,
+        "experiment_source": "reports/results/search.json",
+        "uncalibrated_roi": 1.414266105278118,
+        "calibrated_roi": 1.4253305572574986,
+        "true_roi": 1.78986721
+      },
+      {
+        "channel": "search_nonbrand",
+        "last_touch_roi": 1.3760565237886928,
+        "experiment_roi": -1.5755733225707662,
+        "experiment_roi_se": 2.7203805657420568,
+        "experiment_source": "reports/results/search.json",
+        "uncalibrated_roi": 0.9652733788869557,
+        "calibrated_roi": 0.8536281264330011,
+        "true_roi": 1.26138015
+      },
+      {
+        "channel": "dsp_a",
+        "last_touch_roi": 3.174281038674917,
+        "experiment_roi": 3.7802738944853918,
+        "experiment_roi_se": 1.2972143867926975,
+        "experiment_source": "reports/results/dsp.json",
+        "uncalibrated_roi": 3.3889039396869007,
+        "calibrated_roi": 3.4417865167113875,
+        "true_roi": 3.88898428
+      },
+      {
+        "channel": "dsp_b",
+        "last_touch_roi": 4.123084916133009,
+        "experiment_roi": 4.656990095526985,
+        "experiment_roi_se": 4.94904713975489,
+        "experiment_source": "reports/results/dsp.json",
+        "uncalibrated_roi": 0.6802430570732899,
+        "calibrated_roi": 0.7219936024133947,
+        "true_roi": 0.07936459
+      }
+    ],
+    "calibration_fit": [
+      {
+        "test": "meta",
+        "arm": "holdout",
+        "channels": "social",
+        "window": [
+          58,
+          65
+        ],
+        "observed_ipd": 0.001764099516949886,
+        "se": 0.002989204206162551,
+        "se_model": 0.0029944051591588128,
+        "truth_ipd": 0.0017087774145388144,
+        "source": "reports/results/meta.json",
+        "se_source": "module_se",
+        "uncalibrated_ipd": 0.0012312309250847831,
+        "uncalibrated_ipd_lo": 0.0008062013286826775,
+        "uncalibrated_ipd_hi": 0.0017121157319041182,
+        "calibrated_ipd": 0.0012837134586719888,
+        "calibrated_ipd_lo": 0.0007933591781994069,
+        "calibrated_ipd_hi": 0.0017630806355059155,
+        "calibrated_powered_ipd": 0.0014884571085139549,
+        "calibrated_powered_ipd_lo": 0.0010951006658295023,
+        "calibrated_powered_ipd_hi": 0.001823428942762151
+      },
+      {
+        "test": "search",
+        "arm": "branded_only",
+        "channels": "search_brand",
+        "window": [
+          79,
+          84
+        ],
+        "observed_ipd": 0.0016479223283783026,
+        "se": 0.0037246940845480016,
+        "se_model": 0.0037283377668165412,
+        "truth_ipd": 0.0010913699860659746,
+        "source": "reports/results/search.json",
+        "se_source": "module_se",
+        "uncalibrated_ipd": 0.0007488465599776736,
+        "uncalibrated_ipd_lo": 3.0047421062039197e-05,
+        "uncalibrated_ipd_hi": 0.0017201648672808007,
+        "calibrated_ipd": 0.0007503124708070795,
+        "calibrated_ipd_lo": 1.882671881496323e-05,
+        "calibrated_ipd_hi": 0.0016576220908974004,
+        "calibrated_powered_ipd": 0.0012656657229643579,
+        "calibrated_powered_ipd_lo": 0.0009671624020983788,
+        "calibrated_powered_ipd_hi": 0.0015916481292765237
+      },
+      {
+        "test": "search",
+        "arm": "all_search",
+        "channels": "search_nonbrand",
+        "window": [
+          79,
+          84
+        ],
+        "observed_ipd": -0.0010503822150471774,
+        "se": 0.001813587043828038,
+        "se_model": 0.0018166262668798433,
+        "truth_ipd": 0.0007722286971221168,
+        "source": "reports/results/search.json",
+        "se_source": "module_se",
+        "uncalibrated_ipd": 0.000549570626801214,
+        "uncalibrated_ipd_lo": 7.828436058812811e-05,
+        "uncalibrated_ipd_hi": 0.001028789696824292,
+        "calibrated_ipd": 0.0004837712509077675,
+        "calibrated_ipd_lo": 2.3835994262943835e-05,
+        "calibrated_ipd_hi": 0.0008756156379085529,
+        "calibrated_powered_ipd": 0.0008431790263135197,
+        "calibrated_powered_ipd_lo": 0.0006057524596995406,
+        "calibrated_powered_ipd_hi": 0.0010500880527469884
+      },
+      {
+        "test": "dsp_a",
+        "arm": "holdout",
+        "channels": "dsp_a",
+        "window": [
+          112,
+          123
+        ],
+        "observed_ipd": 0.0025201825963235944,
+        "se": 0.0008648095911951317,
+        "se_model": 0.0009007823445268086,
+        "truth_ipd": 0.0015711473118134559,
+        "source": "reports/results/dsp.json",
+        "se_source": "module_se",
+        "uncalibrated_ipd": 0.0019191611129025174,
+        "uncalibrated_ipd_lo": 0.0014566925194622366,
+        "uncalibrated_ipd_hi": 0.0024738433996132517,
+        "calibrated_ipd": 0.001979546571691038,
+        "calibrated_ipd_lo": 0.0014179331081574011,
+        "calibrated_ipd_hi": 0.002397579780948298,
+        "calibrated_powered_ipd": 0.001716235345630387,
+        "calibrated_powered_ipd_lo": 0.001391335579684197,
+        "calibrated_powered_ipd_hi": 0.00206297613948856
+      },
+      {
+        "test": "dsp_b",
+        "arm": "holdout",
+        "channels": "dsp_b",
+        "window": [
+          112,
+          123
+        ],
+        "observed_ipd": 0.0031046600636846565,
+        "se": 0.003299364759836593,
+        "se_model": 0.003313939794196926,
+        "truth_ipd": 4.812737191702723e-05,
+        "source": "reports/results/dsp.json",
+        "se_source": "module_se",
+        "uncalibrated_ipd": 0.0003869103416747539,
+        "uncalibrated_ipd_lo": 4.290667037282127e-05,
+        "uncalibrated_ipd_hi": 0.0007813503360485733,
+        "calibrated_ipd": 0.0004051779083917871,
+        "calibrated_ipd_lo": 3.850969251838811e-05,
+        "calibrated_ipd_hi": 0.0007994385596087618,
+        "calibrated_powered_ipd": 4.863689245300899e-05,
+        "calibrated_powered_ipd_lo": 3.570057751183407e-05,
+        "calibrated_powered_ipd_hi": 6.193888649570393e-05
+      }
+    ],
+    "calibration_observations": [
+      {
+        "test": "meta",
+        "arm": "holdout",
+        "channels": [
+          "social"
+        ],
+        "window": [
+          58,
+          65
+        ],
+        "leakage": 0.25,
+        "metric": "sales",
+        "incremental_per_dollar": 0.001764099516949886,
+        "se": 0.002989204206162551,
+        "se_source": "module_se",
+        "spend_removed": 7847.046238726528,
+        "incremental": null,
+        "source": "reports/results/meta.json",
+        "label_channel": "social",
+        "truth_incremental_per_dollar": 0.0017087774145388144,
+        "se_model": 0.0029944051591588128
+      },
+      {
+        "test": "search",
+        "arm": "branded_only",
+        "channels": [
+          "search_brand"
+        ],
+        "window": [
+          79,
+          84
+        ],
+        "leakage": 0.0,
+        "metric": "sales",
+        "incremental_per_dollar": 0.0016479223283783026,
+        "se": 0.0037246940845480016,
+        "se_source": "module_se",
+        "spend_removed": 3611.5543521519053,
+        "incremental": null,
+        "source": "reports/results/search.json",
+        "label_channel": "search_brand",
+        "truth_incremental_per_dollar": 0.0010913699860659746,
+        "se_model": 0.0037283377668165412
+      },
+      {
+        "test": "search",
+        "arm": "all_search",
+        "channels": [
+          "search_nonbrand"
+        ],
+        "window": [
+          79,
+          84
+        ],
+        "leakage": 0.0,
+        "metric": "sales",
+        "incremental_per_dollar": -0.0010503822150471774,
+        "se": 0.001813587043828038,
+        "se_source": "module_se",
+        "spend_removed": 10180.051006813428,
+        "incremental": null,
+        "source": "reports/results/search.json",
+        "label_channel": "search_nonbrand",
+        "truth_incremental_per_dollar": 0.0007722286971221168,
+        "se_model": 0.0018166262668798433
+      },
+      {
+        "test": "dsp_a",
+        "arm": "holdout",
+        "channels": [
+          "dsp_a"
+        ],
+        "window": [
+          112,
+          123
+        ],
+        "leakage": 0.03,
+        "metric": "sales",
+        "incremental_per_dollar": 0.0025201825963235944,
+        "se": 0.0008648095911951317,
+        "se_source": "module_se",
+        "spend_removed": 57759.291000522215,
+        "incremental": 145.5639599555061,
+        "source": "reports/results/dsp.json",
+        "label_channel": "dsp_a",
+        "truth_incremental_per_dollar": 0.0015711473118134559,
+        "se_model": 0.0009007823445268086
+      },
+      {
+        "test": "dsp_b",
+        "arm": "holdout",
+        "channels": [
+          "dsp_b"
+        ],
+        "window": [
+          112,
+          123
+        ],
+        "leakage": 0.03,
+        "metric": "sales",
+        "incremental_per_dollar": 0.0031046600636846565,
+        "se": 0.003299364759836593,
+        "se_source": "module_se",
+        "spend_removed": 17158.37692461987,
+        "incremental": 53.27092759551567,
+        "source": "reports/results/dsp.json",
+        "label_channel": "dsp_b",
+        "truth_incremental_per_dollar": 4.812737191702723e-05,
+        "se_model": 0.003313939794196926
+      }
+    ],
+    "optimizer": {
+      "uncalibrated": {
+        "status_quo": {
+          "multipliers": {
+            "tv": 1.0,
+            "social": 1.0,
+            "search_brand": 1.0,
+            "search_nonbrand": 1.0,
+            "dsp_a": 1.0,
+            "dsp_b": 1.0
+          },
+          "spend_by_channel": {
+            "tv": 32252445.009861346,
+            "social": 14773742.124862144,
+            "search_brand": 6225161.229973952,
+            "search_nonbrand": 12965095.866302542,
+            "dsp_a": 7416025.047635525,
+            "dsp_b": 5343430.61128736
+          },
+          "total_spend": 78975899.88992286,
+          "incremental_sales": {
+            "mean": 66367.44349707739,
+            "median": 65796.3286608259,
+            "sd": 10008.404288513726,
+            "hdi_low": 48760.74679281838,
+            "hdi_high": 80755.93837091938,
+            "hdi_prob": 0.9
+          },
+          "cpa": {
+            "mean": 1216.699512633524,
+            "median": 1200.3086367502406,
+            "sd": 181.25736126558772,
+            "hdi_low": 911.7354992797372,
+            "hdi_high": 1514.764122479228,
+            "hdi_prob": 0.9
+          },
+          "roi": {
+            "mean": 1.2605258741511167,
+            "median": 1.2496786124475934,
+            "sd": 0.19009098286559906,
+            "hdi_low": 0.9261194907708828,
+            "hdi_high": 1.5338085127895513,
+            "hdi_prob": 0.9
+          }
+        },
+        "optimal": {
+          "multipliers": {
+            "tv": 0.7,
+            "social": 1.3,
+            "search_brand": 1.3,
+            "search_nonbrand": 1.212438395674478,
+            "dsp_a": 1.3,
+            "dsp_b": 0.7000000000000031
+          },
+          "spend_by_channel": {
+            "tv": 22576711.50690294,
+            "social": 19205864.762320787,
+            "search_brand": 8092709.598966138,
+            "search_nonbrand": 15719380.03190566,
+            "dsp_a": 9640832.561926184,
+            "dsp_b": 3740401.4279011684
+          },
+          "total_spend": 78975899.88992287,
+          "incremental_sales": {
+            "mean": 71755.23773418693,
+            "median": 71153.90856911096,
+            "sd": 10562.806079382579,
+            "hdi_low": 53686.958072460926,
+            "hdi_high": 88287.2050572212,
+            "hdi_prob": 0.9
+          },
+          "cpa": {
+            "mean": 1124.2683955047492,
+            "median": 1109.9306169087854,
+            "sd": 164.0933314735516,
+            "hdi_low": 865.940086799501,
+            "hdi_high": 1396.5020098746031,
+            "hdi_prob": 0.9
+          },
+          "roi": {
+            "mean": 1.3628569823363808,
+            "median": 1.3514358557791506,
+            "sd": 0.20062081142674704,
+            "hdi_low": 1.019683691112545,
+            "hdi_high": 1.6768508845155894,
+            "hdi_prob": 0.9
+          },
+          "delta_vs_ref": {
+            "mean": 5387.79423710953,
+            "median": 5313.474648645155,
+            "sd": 2051.4008896773285,
+            "hdi_low": 2022.1471036238654,
+            "hdi_high": 8530.115326278901,
+            "hdi_prob": 0.9
+          },
+          "prob_better": 0.9983333333333333
+        },
+        "scenarios": {
+          "0.8x": {
+            "proportional": {
+              "multipliers": {
+                "tv": 0.8,
+                "social": 0.8,
+                "search_brand": 0.8,
+                "search_nonbrand": 0.8,
+                "dsp_a": 0.8,
+                "dsp_b": 0.8
+              },
+              "spend_by_channel": {
+                "tv": 25801956.007889077,
+                "social": 11818993.699889716,
+                "search_brand": 4980128.983979162,
+                "search_nonbrand": 10372076.693042034,
+                "dsp_a": 5932820.038108421,
+                "dsp_b": 4274744.489029888
+              },
+              "total_spend": 63180719.91193831,
+              "incremental_sales": {
+                "mean": 58509.30297556335,
+                "median": 57933.760244329984,
+                "sd": 9258.062547608892,
+                "hdi_low": 41665.6483579074,
+                "hdi_high": 71789.64959441095,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 1106.402154073813,
+                "median": 1090.5682574066616,
+                "sd": 172.01082444591768,
+                "hdi_low": 806.2074566867141,
+                "hdi_high": 1376.67840444856,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.3890939290604947,
+                "median": 1.375429727417124,
+                "sd": 0.21979955025471787,
+                "hdi_low": 0.9892016524023763,
+                "hdi_high": 1.704388214343042,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": -7858.140521514051,
+                "median": -7798.257325046787,
+                "sd": 1365.3959601027732,
+                "hdi_low": -9936.932640745945,
+                "hdi_high": -5603.801119835669,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 0.0,
+              "true_incremental": 61470.45388315562
+            },
+            "optimized": {
+              "multipliers": {
+                "tv": 0.7000000000000001,
+                "social": 1.0481807025206198,
+                "search_brand": 0.7,
+                "search_nonbrand": 0.7,
+                "dsp_a": 1.0713118630840597,
+                "dsp_b": 0.7
+              },
+              "spend_by_channel": {
+                "tv": 22576711.506902944,
+                "social": 15485551.399296476,
+                "search_brand": 4357612.860981766,
+                "search_nonbrand": 9075567.10641178,
+                "dsp_a": 7944875.610460468,
+                "dsp_b": 3740401.4279011516
+              },
+              "total_spend": 63180719.91195458,
+              "incremental_sales": {
+                "mean": 62336.5198710963,
+                "median": 61387.63140684644,
+                "sd": 9042.957426580608,
+                "hdi_low": 47676.5331431197,
+                "hdi_high": 76426.61822001546,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 1034.5144959589516,
+                "median": 1029.2094919057495,
+                "sd": 147.62906631586353,
+                "hdi_low": 769.8012330909457,
+                "hdi_high": 1262.6138905762516,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.4799574923639351,
+                "median": 1.4574295329111422,
+                "sd": 0.2146926492571407,
+                "hdi_low": 1.1319085919618976,
+                "hdi_high": 1.8144764334717858,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": -4030.923625981097,
+                "median": -3778.7886948086307,
+                "sd": 1704.6843623960492,
+                "hdi_low": -6554.170795802929,
+                "hdi_high": -1473.8061445454077,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 0.0,
+              "true_incremental": 65170.04624609806
+            }
+          },
+          "1.2x": {
+            "proportional": {
+              "multipliers": {
+                "tv": 1.2,
+                "social": 1.2,
+                "search_brand": 1.2,
+                "search_nonbrand": 1.2,
+                "dsp_a": 1.2,
+                "dsp_b": 1.2
+              },
+              "spend_by_channel": {
+                "tv": 38702934.011833616,
+                "social": 17728490.54983457,
+                "search_brand": 7470193.475968743,
+                "search_nonbrand": 15558115.03956305,
+                "dsp_a": 8899230.05716263,
+                "dsp_b": 6412116.733544832
+              },
+              "total_spend": 94771079.86790743,
+              "incremental_sales": {
+                "mean": 72836.91727729063,
+                "median": 72310.16643571023,
+                "sd": 10687.39743784279,
+                "hdi_low": 53747.918591092326,
+                "hdi_high": 88365.9682792892,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 1328.9249471492255,
+                "median": 1310.6195643762278,
+                "sd": 193.5336187369704,
+                "hdi_low": 996.4378187012501,
+                "hdi_high": 1626.8217114492766,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.1528345574221255,
+                "median": 1.1444973488193333,
+                "sd": 0.1691559933590335,
+                "hdi_low": 0.8507012687732355,
+                "hdi_high": 1.398622370914011,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": 6469.473780213244,
+                "median": 6381.990464898256,
+                "sd": 1248.610691844234,
+                "hdi_low": 4321.563762439837,
+                "hdi_high": 8235.765797128086,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 1.0,
+              "true_incremental": 74791.32642045165
+            },
+            "optimized": {
+              "multipliers": {
+                "tv": 1.055132053195422,
+                "social": 1.3,
+                "search_brand": 1.3,
+                "search_nonbrand": 1.2999999999999998,
+                "dsp_a": 1.3,
+                "dsp_b": 1.2999999999999996
+              },
+              "spend_by_channel": {
+                "tv": 34030588.52382745,
+                "social": 19205864.762320787,
+                "search_brand": 8092709.598966138,
+                "search_nonbrand": 16854624.626193304,
+                "dsp_a": 9640832.561926184,
+                "dsp_b": 6946459.794673566
+              },
+              "total_spend": 94771079.86790742,
+              "incremental_sales": {
+                "mean": 74682.18621978452,
+                "median": 73894.14299131793,
+                "sd": 10906.710498807024,
+                "hdi_low": 54570.5432203387,
+                "hdi_high": 90335.82411892706,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 1295.841498694224,
+                "median": 1282.5250295387996,
+                "sd": 187.858963352945,
+                "hdi_low": 975.1900473209726,
+                "hdi_high": 1577.2828174895867,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.1820407605971734,
+                "median": 1.1695679171480176,
+                "sd": 0.17262719566995868,
+                "hdi_low": 0.863721453259784,
+                "hdi_high": 1.429800487313816,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": 8314.742722707118,
+                "median": 8113.004544717325,
+                "sd": 1811.2679933086933,
+                "hdi_low": 5556.280275039579,
+                "hdi_high": 11097.63248518006,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 1.0,
+              "true_incremental": 76204.21023492412
+            }
+          }
+        },
+        "truth_check": {
+          "status_quo_true_incremental": 68854.08080486447,
+          "optimal_true_incremental": 73571.59397345822,
+          "true_gain": 4717.513168593752,
+          "true_gain_pct": 0.06851464885521302
+        },
+        "budget": 78975899.88992286,
+        "horizon_weeks": 52,
+        "bounds": [
+          0.7,
+          1.3
+        ]
+      },
+      "calibrated": {
+        "status_quo": {
+          "multipliers": {
+            "tv": 1.0,
+            "social": 1.0,
+            "search_brand": 1.0,
+            "search_nonbrand": 1.0,
+            "dsp_a": 1.0,
+            "dsp_b": 1.0
+          },
+          "spend_by_channel": {
+            "tv": 32252445.009861346,
+            "social": 14773742.124862144,
+            "search_brand": 6225161.229973952,
+            "search_nonbrand": 12965095.866302542,
+            "dsp_a": 7416025.047635525,
+            "dsp_b": 5343430.61128736
+          },
+          "total_spend": 78975899.88992286,
+          "incremental_sales": {
+            "mean": 66253.09414884327,
+            "median": 65981.6056609514,
+            "sd": 8939.043096792466,
+            "hdi_low": 51333.80853227273,
+            "hdi_high": 79947.7690287199,
+            "hdi_prob": 0.9
+          },
+          "cpa": {
+            "mean": 1214.1758536004713,
+            "median": 1196.9384171876231,
+            "sd": 167.5203225101608,
+            "hdi_low": 937.1184955697087,
+            "hdi_high": 1465.8118985476922,
+            "hdi_prob": 0.9
+          },
+          "roi": {
+            "mean": 1.2583540214392102,
+            "median": 1.2531976036914492,
+            "sd": 0.16978046041738867,
+            "hdi_low": 0.9749900020858667,
+            "hdi_high": 1.518458842637152,
+            "hdi_prob": 0.9
+          }
+        },
+        "optimal": {
+          "multipliers": {
+            "tv": 0.7000000000000001,
+            "social": 1.2999999999999998,
+            "search_brand": 1.3,
+            "search_nonbrand": 1.2124383956744778,
+            "dsp_a": 1.2999999999999998,
+            "dsp_b": 0.7
+          },
+          "spend_by_channel": {
+            "tv": 22576711.506902944,
+            "social": 19205864.762320783,
+            "search_brand": 8092709.598966138,
+            "search_nonbrand": 15719380.031905659,
+            "dsp_a": 9640832.561926182,
+            "dsp_b": 3740401.4279011516
+          },
+          "total_spend": 78975899.88992286,
+          "incremental_sales": {
+            "mean": 71439.25804520295,
+            "median": 71111.12176071986,
+            "sd": 9506.771591611601,
+            "hdi_low": 57900.191745604585,
+            "hdi_high": 88619.6414639793,
+            "hdi_prob": 0.9
+          },
+          "cpa": {
+            "mean": 1125.6121599727292,
+            "median": 1110.5985138161209,
+            "sd": 154.18817147123332,
+            "hdi_low": 891.1782826612284,
+            "hdi_high": 1364.000662328,
+            "hdi_prob": 0.9
+          },
+          "roi": {
+            "mean": 1.3568555371596043,
+            "median": 1.350623200112345,
+            "sd": 0.18056340487785902,
+            "hdi_low": 1.0997062108752087,
+            "hdi_high": 1.6831648943696358,
+            "hdi_prob": 0.9
+          },
+          "delta_vs_ref": {
+            "mean": 5186.163896359666,
+            "median": 5046.63623711696,
+            "sd": 2024.2866277642754,
+            "hdi_low": 2016.2106715437694,
+            "hdi_high": 8400.400163235987,
+            "hdi_prob": 0.9
+          },
+          "prob_better": 0.995
+        },
+        "scenarios": {
+          "0.8x": {
+            "proportional": {
+              "multipliers": {
+                "tv": 0.8,
+                "social": 0.8,
+                "search_brand": 0.8,
+                "search_nonbrand": 0.8,
+                "dsp_a": 0.8,
+                "dsp_b": 0.8
+              },
+              "spend_by_channel": {
+                "tv": 25801956.007889077,
+                "social": 11818993.699889716,
+                "search_brand": 4980128.983979162,
+                "search_nonbrand": 10372076.693042034,
+                "dsp_a": 5932820.038108421,
+                "dsp_b": 4274744.489029888
+              },
+              "total_spend": 63180719.91193831,
+              "incremental_sales": {
+                "mean": 58441.58701768431,
+                "median": 57949.5594683014,
+                "sd": 8307.001911645613,
+                "hdi_low": 45387.39706051219,
+                "hdi_high": 71844.92312249851,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 1103.1598838194234,
+                "median": 1090.2709293088978,
+                "sd": 158.7594278660497,
+                "hdi_low": 862.6535514423128,
+                "hdi_high": 1367.1729801400672,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.3874862560716439,
+                "median": 1.37580482342727,
+                "sd": 0.19722002036121064,
+                "hdi_low": 1.0775612510534882,
+                "hdi_high": 1.7057004863818366,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": -7811.507131158974,
+                "median": -7809.5727318815625,
+                "sd": 1313.279916784036,
+                "hdi_low": -9895.90560988734,
+                "hdi_high": -5539.321691721081,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 0.0,
+              "true_incremental": 61470.45388315562
+            },
+            "optimized": {
+              "multipliers": {
+                "tv": 0.7000000000000001,
+                "social": 1.042521569492954,
+                "search_brand": 0.700000000000001,
+                "search_nonbrand": 0.7,
+                "dsp_a": 1.082585634521685,
+                "dsp_b": 0.7
+              },
+              "spend_by_channel": {
+                "tv": 22576711.506902944,
+                "social": 15401944.82729545,
+                "search_brand": 4357612.860981773,
+                "search_nonbrand": 9075567.10641178,
+                "dsp_a": 8028482.181823215,
+                "dsp_b": 3740401.4279011516
+              },
+              "total_spend": 63180719.911316305,
+              "incremental_sales": {
+                "mean": 62286.01491216091,
+                "median": 62033.97023331443,
+                "sd": 8201.259286695651,
+                "hdi_low": 48854.90032693874,
+                "hdi_high": 74865.9670334129,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 1032.1235412895508,
+                "median": 1018.4858343896922,
+                "sd": 137.5686333633386,
+                "hdi_low": 814.4199963906241,
+                "hdi_high": 1254.2853003435316,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.4787584329425674,
+                "median": 1.4727745343924972,
+                "sd": 0.19470954030455873,
+                "hdi_low": 1.1598847020621317,
+                "hdi_high": 1.7774243583762248,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": -3967.0792366823625,
+                "median": -3881.611713323451,
+                "sd": 1519.3294047933075,
+                "hdi_low": -6345.638998962037,
+                "hdi_high": -1576.799536344879,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 0.0,
+              "true_incremental": 65248.56927345866
+            }
+          },
+          "1.2x": {
+            "proportional": {
+              "multipliers": {
+                "tv": 1.2,
+                "social": 1.2,
+                "search_brand": 1.2,
+                "search_nonbrand": 1.2,
+                "dsp_a": 1.2,
+                "dsp_b": 1.2
+              },
+              "spend_by_channel": {
+                "tv": 38702934.011833616,
+                "social": 17728490.54983457,
+                "search_brand": 7470193.475968743,
+                "search_nonbrand": 15558115.03956305,
+                "dsp_a": 8899230.05716263,
+                "dsp_b": 6412116.733544832
+              },
+              "total_spend": 94771079.86790743,
+              "incremental_sales": {
+                "mean": 72680.37864613393,
+                "median": 72442.89035411745,
+                "sd": 9550.02631988816,
+                "hdi_low": 56571.3600838733,
+                "hdi_high": 87915.8810131081,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 1327.1119502426723,
+                "median": 1308.2178205526848,
+                "sd": 179.8154116490545,
+                "hdi_low": 1027.3585230918513,
+                "hdi_high": 1587.3487346300758,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.1503569245085579,
+                "median": 1.1465980516696996,
+                "sd": 0.15115412317553603,
+                "hdi_low": 0.8953896087718347,
+                "hdi_high": 1.3914985637334591,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": 6427.284497290652,
+                "median": 6382.556410636025,
+                "sd": 1241.0621550667463,
+                "hdi_low": 4146.070129987507,
+                "hdi_high": 8210.307752272638,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 1.0,
+              "true_incremental": 74791.32642045165
+            },
+            "optimized": {
+              "multipliers": {
+                "tv": 1.0551320531954216,
+                "social": 1.3,
+                "search_brand": 1.3,
+                "search_nonbrand": 1.3,
+                "dsp_a": 1.3,
+                "dsp_b": 1.3
+              },
+              "spend_by_channel": {
+                "tv": 34030588.52382743,
+                "social": 19205864.762320787,
+                "search_brand": 8092709.598966138,
+                "search_nonbrand": 16854624.626193307,
+                "dsp_a": 9640832.561926184,
+                "dsp_b": 6946459.794673569
+              },
+              "total_spend": 94771079.8679074,
+              "incremental_sales": {
+                "mean": 74464.10831360915,
+                "median": 74244.60785221262,
+                "sd": 9756.626539089506,
+                "hdi_low": 57558.28510317811,
+                "hdi_high": 89588.85707515654,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 1295.2290605893484,
+                "median": 1276.4712482135576,
+                "sd": 175.2557159380735,
+                "hdi_low": 1019.1576674666055,
+                "hdi_high": 1567.4745186461178,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.1785891078385582,
+                "median": 1.1751149394260665,
+                "sd": 0.15442411154365385,
+                "hdi_low": 0.9110102762900336,
+                "hdi_high": 1.4179777818300603,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": 8211.014164765866,
+                "median": 8123.013995002671,
+                "sd": 1780.9235611206598,
+                "hdi_low": 5293.866021109061,
+                "hdi_high": 11045.664746710507,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 1.0,
+              "true_incremental": 76204.21023492412
+            }
+          }
+        },
+        "truth_check": {
+          "status_quo_true_incremental": 68854.08080486447,
+          "optimal_true_incremental": 73571.5939734582,
+          "true_gain": 4717.513168593738,
+          "true_gain_pct": 0.06851464885521281
+        },
+        "budget": 78975899.88992286,
+        "horizon_weeks": 52,
+        "bounds": [
+          0.7,
+          1.3
+        ]
+      },
+      "calibrated_powered": {
+        "status_quo": {
+          "multipliers": {
+            "tv": 1.0,
+            "social": 1.0,
+            "search_brand": 1.0,
+            "search_nonbrand": 1.0,
+            "dsp_a": 1.0,
+            "dsp_b": 1.0
+          },
+          "spend_by_channel": {
+            "tv": 32252445.009861346,
+            "social": 14773742.124862144,
+            "search_brand": 6225161.229973952,
+            "search_nonbrand": 12965095.866302542,
+            "dsp_a": 7416025.047635525,
+            "dsp_b": 5343430.61128736
+          },
+          "total_spend": 78975899.88992286,
+          "incremental_sales": {
+            "mean": 74805.07989274675,
+            "median": 73921.93963344205,
+            "sd": 7046.243049705924,
+            "hdi_low": 62416.60556209601,
+            "hdi_high": 85168.28504973979,
+            "hdi_prob": 0.9
+          },
+          "cpa": {
+            "mean": 1064.945468468622,
+            "median": 1068.3695528264345,
+            "sd": 98.27714387597,
+            "hdi_low": 914.5826274661289,
+            "hdi_high": 1243.491136608028,
+            "hdi_prob": 0.9
+          },
+          "roi": {
+            "mean": 1.4207830489493107,
+            "median": 1.4040094459792472,
+            "sd": 0.13383025187798475,
+            "hdi_low": 1.1854870723048303,
+            "hdi_high": 1.6176128129299177,
+            "hdi_prob": 0.9
+          }
+        },
+        "optimal": {
+          "multipliers": {
+            "tv": 0.7000000000000003,
+            "social": 1.3,
+            "search_brand": 1.2999999999999998,
+            "search_nonbrand": 1.212438397232253,
+            "dsp_a": 1.2999999999999998,
+            "dsp_b": 0.7
+          },
+          "spend_by_channel": {
+            "tv": 22576711.50690295,
+            "social": 19205864.762320787,
+            "search_brand": 8092709.598966137,
+            "search_nonbrand": 15719380.052102363,
+            "dsp_a": 9640832.561926182,
+            "dsp_b": 3740401.4279011516
+          },
+          "total_spend": 78975899.91011956,
+          "incremental_sales": {
+            "mean": 81798.35276478725,
+            "median": 81239.6707557142,
+            "sd": 6948.096441793481,
+            "hdi_low": 69913.5726141342,
+            "hdi_high": 92401.85597078403,
+            "hdi_prob": 0.9
+          },
+          "cpa": {
+            "mean": 972.3149126770476,
+            "median": 972.1346850440397,
+            "sd": 80.83491842889528,
+            "hdi_low": 835.044660566596,
+            "hdi_high": 1098.7205908406,
+            "hdi_prob": 0.9
+          },
+          "roi": {
+            "mean": 1.5536072306465611,
+            "median": 1.5429961073220624,
+            "sd": 0.13196613998132842,
+            "hdi_low": 1.3278779860761518,
+            "hdi_high": 1.7550010080786203,
+            "hdi_prob": 0.9
+          },
+          "delta_vs_ref": {
+            "mean": 6993.272872040479,
+            "median": 7009.09323525642,
+            "sd": 1651.3694622057783,
+            "hdi_low": 4661.324800481394,
+            "hdi_high": 9940.218831642582,
+            "hdi_prob": 0.9
+          },
+          "prob_better": 1.0
+        },
+        "scenarios": {
+          "0.8x": {
+            "proportional": {
+              "multipliers": {
+                "tv": 0.8,
+                "social": 0.8,
+                "search_brand": 0.8,
+                "search_nonbrand": 0.8,
+                "dsp_a": 0.8,
+                "dsp_b": 0.8
+              },
+              "spend_by_channel": {
+                "tv": 25801956.007889077,
+                "social": 11818993.699889716,
+                "search_brand": 4980128.983979162,
+                "search_nonbrand": 10372076.693042034,
+                "dsp_a": 5932820.038108421,
+                "dsp_b": 4274744.489029888
+              },
+              "total_spend": 63180719.91193831,
+              "incremental_sales": {
+                "mean": 66256.85075532526,
+                "median": 65310.81436924129,
+                "sd": 6935.545279393235,
+                "hdi_low": 54192.75765359549,
+                "hdi_high": 76713.48566815507,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 963.8625335345802,
+                "median": 967.3852754036905,
+                "sd": 99.13098075389824,
+                "hdi_low": 796.6191393053484,
+                "hdi_high": 1123.9600946918183,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.5730317139708396,
+                "median": 1.5505714669033193,
+                "sd": 0.16465969260226956,
+                "hdi_low": 1.2866130141235261,
+                "hdi_high": 1.821287074009575,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": -8548.2291374215,
+                "median": -8475.470050547781,
+                "sd": 1051.566713150404,
+                "hdi_low": -10206.232729611307,
+                "hdi_high": -6698.584874971857,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 0.0,
+              "true_incremental": 61470.45388315562
+            },
+            "optimized": {
+              "multipliers": {
+                "tv": 0.7,
+                "social": 0.9845077983418802,
+                "search_brand": 1.017943606220793,
+                "search_nonbrand": 0.7000000000000001,
+                "dsp_a": 0.9312687621797247,
+                "dsp_b": 0.7
+              },
+              "spend_by_channel": {
+                "tv": 22576711.50690294,
+                "social": 14544864.332618719,
+                "search_brand": 6336863.071745552,
+                "search_nonbrand": 9075567.106411781,
+                "dsp_a": 6906312.466405369,
+                "dsp_b": 3740401.4279011516
+              },
+              "total_spend": 63180719.91198551,
+              "incremental_sales": {
+                "mean": 70244.38900421819,
+                "median": 69584.39468397269,
+                "sd": 6799.867862690943,
+                "hdi_low": 59121.97671468023,
+                "hdi_high": 81097.52933486988,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 907.7136147400176,
+                "median": 907.9725889608404,
+                "sd": 86.12998974936325,
+                "hdi_low": 773.4705717102026,
+                "hdi_high": 1058.3464616101212,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.6677015338398993,
+                "median": 1.6520323315619354,
+                "sd": 0.16143851808344925,
+                "hdi_low": 1.403639673551694,
+                "hdi_high": 1.9253704954892144,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": -4560.69088852856,
+                "median": -4498.973006934881,
+                "sd": 847.6869191232333,
+                "hdi_low": -5816.009493133621,
+                "hdi_high": -3006.704616986797,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 0.0,
+              "true_incremental": 63861.1927903931
+            }
+          },
+          "1.2x": {
+            "proportional": {
+              "multipliers": {
+                "tv": 1.2,
+                "social": 1.2,
+                "search_brand": 1.2,
+                "search_nonbrand": 1.2,
+                "dsp_a": 1.2,
+                "dsp_b": 1.2
+              },
+              "spend_by_channel": {
+                "tv": 38702934.011833616,
+                "social": 17728490.54983457,
+                "search_brand": 7470193.475968743,
+                "search_nonbrand": 15558115.03956305,
+                "dsp_a": 8899230.05716263,
+                "dsp_b": 6412116.733544832
+              },
+              "total_spend": 94771079.86790743,
+              "incremental_sales": {
+                "mean": 81778.58386286738,
+                "median": 80992.73308079712,
+                "sd": 7212.346771231767,
+                "hdi_low": 69257.83478931524,
+                "hdi_high": 92250.33953692872,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 1167.7104694898153,
+                "median": 1170.1183599139715,
+                "sd": 100.89736901570397,
+                "hdi_low": 1016.2894746037427,
+                "hdi_high": 1350.7392745711313,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.2943597980024748,
+                "median": 1.281921655746964,
+                "sd": 0.11415423536300921,
+                "hdi_low": 1.0961862239912314,
+                "hdi_high": 1.46010269692254,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": 6973.503970120622,
+                "median": 6881.934231551961,
+                "sd": 1006.8348328581709,
+                "hdi_low": 5324.432064519235,
+                "hdi_high": 8597.848331083922,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 1.0,
+              "true_incremental": 74791.32642045165
+            },
+            "optimized": {
+              "multipliers": {
+                "tv": 1.1545371794049895,
+                "social": 1.3,
+                "search_brand": 1.3,
+                "search_nonbrand": 1.3,
+                "dsp_a": 1.3,
+                "dsp_b": 0.7000000000000006
+              },
+              "spend_by_channel": {
+                "tv": 37236646.89059985,
+                "social": 19205864.762320787,
+                "search_brand": 8092709.598966138,
+                "search_nonbrand": 16854624.626193307,
+                "dsp_a": 9640832.561926184,
+                "dsp_b": 3740401.4279011553
+              },
+              "total_spend": 94771079.8679074,
+              "incremental_sales": {
+                "mean": 84224.32696687653,
+                "median": 83491.83245621872,
+                "sd": 7246.225110308646,
+                "hdi_low": 73026.13219416863,
+                "hdi_high": 96225.01838295867,
+                "hdi_prob": 0.9
+              },
+              "cpa": {
+                "mean": 1133.386074166341,
+                "median": 1135.094337841398,
+                "sd": 95.54999253938907,
+                "hdi_low": 977.8017966918607,
+                "hdi_high": 1290.098284966474,
+                "hdi_prob": 0.9
+              },
+              "roi": {
+                "mean": 1.3330700739761905,
+                "median": 1.321476434149377,
+                "sd": 0.11469044861167277,
+                "hdi_low": 1.1558293779487314,
+                "hdi_high": 1.5230123765141925,
+                "hdi_prob": 0.9
+              },
+              "delta_vs_ref": {
+                "mean": 9419.247074129758,
+                "median": 9285.579719571171,
+                "sd": 1451.7545092487426,
+                "hdi_low": 7119.336123261746,
+                "hdi_high": 11833.906383637572,
+                "hdi_prob": 0.9
+              },
+              "prob_better": 1.0,
+              "true_incremental": 76615.95717398144
+            }
+          }
+        },
+        "truth_check": {
+          "status_quo_true_incremental": 68854.08080486447,
+          "optimal_true_incremental": 73571.59398050958,
+          "true_gain": 4717.513175645116,
+          "true_gain_pct": 0.06851464895762327
+        },
+        "budget": 78975899.88992286,
+        "horizon_weeks": 52,
+        "bounds": [
+          0.7,
+          1.3
+        ]
+      }
+    },
+    "value_of_information": {
+      "tv": {
+        "evppi_sales": 5.832045438585373,
+        "evppi_value": 8748.06815787806,
+        "roi_cv": 0.5077909558518247,
+        "roi_hdi_width": 0.6119609589865816
+      },
+      "social": {
+        "evppi_sales": 0.6611350633768719,
+        "evppi_value": 991.7025950653078,
+        "roi_cv": 0.2845235815597766,
+        "roi_hdi_width": 1.6667936476467227
+      },
+      "search_brand": {
+        "evppi_sales": 135.8597026402219,
+        "evppi_value": 203789.55396033288,
+        "roi_cv": 0.7922016318635319,
+        "roi_hdi_width": 2.763080974318867
+      },
+      "search_nonbrand": {
+        "evppi_sales": 96.16226168845584,
+        "evppi_value": 144243.39253268376,
+        "roi_cv": 0.5690839825886427,
+        "roi_hdi_width": 1.3604793138037126
+      },
+      "dsp_a": {
+        "evppi_sales": 7.3086194032981435,
+        "evppi_value": 10962.929104947216,
+        "roi_cv": 0.12912749776611263,
+        "roi_hdi_width": 1.352757905242552
+      },
+      "dsp_b": {
+        "evppi_sales": 74.98427104923049,
+        "evppi_value": 112476.40657384573,
+        "roi_cv": 0.7903738680523833,
+        "roi_hdi_width": 1.3755624713667864
+      }
+    },
+    "settings": {
+      "draws": 500,
+      "tune": 700,
+      "chains": 4,
+      "target_accept": 0.92,
+      "holdout_weeks": 13,
+      "priors": {
+        "roi": "LogNormal(log 1.0, 0.9) per channel (Meridian-style ROI prior: 90% interval ~0.23-4.4x)",
+        "decay": "Beta(2, 2.5) per channel (mean 0.44; anything from no carry-over to long carry-over)",
+        "half_sat": "LogNormal(log 0.9, 0.5) x channel mean spend (half saturation near the operating point)",
+        "slope": "LogNormal(log 1.2, 0.25) (Hill shape: concave to mildly S-shaped)",
+        "baseline": "intercept N(log mean y, 0.5); trend N(0, 0.2); Fourier N(0, 0.2); holidays N(0, 0.3)",
+        "sigma": "HalfNormal(0.1) on log sales"
+      },
+      "min_rel_se_transport": 0.1,
+      "small": false,
+      "env_small": "0"
+    },
+    "calibration_method": "lift-test likelihood: observed incremental sales per $ removed ~ Normal(model-implied value for the same window/leakage/channels, se_model); se_model = hypot(test SE, 10% transport error)"
+  }
+}
