@@ -23,7 +23,10 @@ jobs:
           pip install -r requirements.txt
           pip install -e .
       - name: Tests (small CI geography)
-        run: INCRLAB_SMALL=1 pytest -q
+        run: |
+          # MMM tests read data/national_weekly.parquet; generate the small world first
+          INCRLAB_SMALL=1 python -m incrlab.simulate --small
+          INCRLAB_SMALL=1 pytest -q
       - name: Module tests on the full geography (Social, Paid Search; ~2 min)
         run: |
           python -m incrlab.simulate
